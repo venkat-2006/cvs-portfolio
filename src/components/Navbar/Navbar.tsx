@@ -11,7 +11,7 @@ export default function Navbar() {
     <>
       <header
         className="
-        fixed top-0 left-0 w-full z-50
+        fixed top-0 left-3 w-full z-50
         backdrop-blur-md
         border-b border-white/5
         bg-black/40
@@ -21,7 +21,7 @@ export default function Navbar() {
           <div className="h-20 flex items-center justify-between">
             
             {/* Logo */}
-            <h2 className="font-bold text-white">GFX</h2>
+            <h2 className="font-bold text-white">CVS GFX</h2>
 
             {/* Desktop Menu */}
             <nav className="hidden md:flex gap-8 text-white">

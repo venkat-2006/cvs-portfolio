@@ -11,16 +11,24 @@ export default function Hero() {
     <section
       className="
       relative
+
       min-h-screen
+
       flex
       items-center
+
       overflow-hidden
 
       bg-[#050505]
+
       pt-32
+      pb-20
       "
     >
-      {/* Premium Background Glow */}
+      {/* =========================
+          Premium Glow Background
+      ========================= */}
+
       <div
         className="
         absolute
@@ -32,16 +40,18 @@ export default function Hero() {
         <div
           className="
           absolute
-          top-[-100px]
-          left-[-100px]
+
+          top-20
+          left-20
 
           w-[500px]
           h-[500px]
 
-          bg-purple-500/25
+          bg-purple-600/10
 
-          blur-[180px]
           rounded-full
+
+          blur-[200px]
           "
         />
 
@@ -49,40 +59,44 @@ export default function Hero() {
         <div
           className="
           absolute
-          bottom-[-100px]
-          right-[-100px]
+
+          bottom-20
+          right-20
 
           w-[500px]
           h-[500px]
 
-          bg-blue-500/20
+          bg-blue-500/10
 
-          blur-[180px]
           rounded-full
+
+          blur-[200px]
           "
         />
 
-        {/* Center Accent Glow */}
+        {/* Center Glow */}
         <div
           className="
           absolute
+
           top-1/2
           left-1/2
 
           -translate-x-1/2
           -translate-y-1/2
 
-          w-[300px]
-          h-[300px]
+          w-[350px]
+          h-[350px]
 
-          bg-white/5
+          bg-white/[0.03]
 
-          blur-[120px]
           rounded-full
+
+          blur-[140px]
           "
         />
 
-        {/* Grid Overlay */}
+        {/* Luxury Grid Overlay */}
         <div
           className="
           absolute
@@ -97,6 +111,10 @@ export default function Hero() {
         />
       </div>
 
+      {/* =========================
+          Main Hero Content
+      ========================= */}
+
       <Container>
         <div
           className="
@@ -104,16 +122,33 @@ export default function Hero() {
           z-10
 
           grid
+
           lg:grid-cols-2
 
-          gap-16
-          lg:gap-24
+          gap-20
+          xl:gap-28
 
           items-center
           "
         >
-          {/* Left Content */}
-          <div className="space-y-10">
+          {/* =========================
+              Left Content
+          ========================= */}
+
+          <div
+            className="
+            space-y-10
+
+            text-center
+            lg:text-left
+
+            flex
+            flex-col
+
+            items-center
+            lg:items-start
+            "
+          >
             <HeroContent />
 
             <HeroActions />
@@ -121,10 +156,19 @@ export default function Hero() {
             <HeroTrust />
           </div>
 
-          {/* Right Visual */}
-          <HeroVisual />
+          {/* =========================
+              Right Visual
+          ========================= */}
+
+    <div className="flex justify-center">
+  <HeroVisual />
+</div>
         </div>
       </Container>
+
+      {/* =========================
+          Scroll Indicator
+      ========================= */}
 
       <ScrollIndicator />
     </section>
