@@ -16,12 +16,9 @@ export default function Navbar() {
         left-0
         w-full
         z-50
-
         backdrop-blur-md
-
         border-b
         border-white/5
-
         bg-black/40
         "
       >
@@ -29,163 +26,63 @@ export default function Navbar() {
           <div
             className="
             h-20
-
             flex
             items-center
             justify-between
-
-            px-2
             "
           >
-            {/* Logo */}
             <h2
-              className="
-              text-white
+  className="
+  text-white
+  text-3xl
+  md:text-4xl
+  font-black
+  tracking-wider
+  pl-6
+  "
+>
+  CVS GFX
+</h2>
 
-              text-3xl
-              md:text-4xl
-
-              font-black
-
-              tracking-wider
-              "
-            >
-              CVS GFX
-            </h2>
-
-            {/* Desktop Menu */}
             <nav
               className="
               hidden
               md:flex
-
               items-center
               gap-8
-
               text-white
-
               text-sm
               lg:text-base
               "
             >
-              <a
-                href="#"
-                className="hover:text-purple-400 transition-colors duration-300"
-              >
-                Work
-              </a>
-
-              <a
-                href="#"
-                className="hover:text-purple-400 transition-colors duration-300"
-              >
-                Services
-              </a>
-
-              <a
-                href="#"
-                className="hover:text-purple-400 transition-colors duration-300"
-              >
-                About
-              </a>
-
-              <a
-                href="#"
-                className="hover:text-purple-400 transition-colors duration-300"
-              >
-                Contact
-              </a>
+              <a href="#" className="hover:text-purple-400 transition-colors duration-300">Work</a>
+              <a href="#" className="hover:text-purple-400 transition-colors duration-300">Services</a>
+              <a href="#" className="hover:text-purple-400 transition-colors duration-300">About</a>
+              <a href="#" className="hover:text-purple-400 transition-colors duration-300">Contact</a>
             </nav>
 
-            {/* Mobile Hamburger */}
             <div className="md:hidden text-white z-[60]">
-              <Hamburger
-                toggled={open}
-                toggle={setOpen}
-                size={24}
-              />
+              <Hamburger toggled={open} toggle={setOpen} size={24} />
             </div>
           </div>
         </Container>
       </header>
 
-      {/* Mobile Menu */}
       <div
         className={`
-          fixed
-          inset-0
-
-          z-40
-
-          flex
-          flex-col
-
-          items-center
-          justify-center
-
-          bg-black/95
-
-          backdrop-blur-md
-
-          transition-transform
-          duration-300
-
+          fixed inset-0 z-40
+          flex flex-col items-center justify-center
+          bg-black/95 backdrop-blur-md
+          transition-transform duration-300
           md:hidden
-
-          ${
-            open
-              ? "translate-y-0"
-              : "-translate-y-full"
-          }
+          ${open ? "translate-y-0" : "-translate-y-full"}
         `}
       >
-        <nav
-          className="
-          flex
-          flex-col
-
-          gap-8
-
-          text-2xl
-
-          font-semibold
-
-          text-white
-
-          text-center
-          "
-        >
-          <a
-            onClick={() => setOpen(false)}
-            href="#"
-            className="hover:text-purple-400 transition-colors"
-          >
-            Work
-          </a>
-
-          <a
-            onClick={() => setOpen(false)}
-            href="#"
-            className="hover:text-purple-400 transition-colors"
-          >
-            Services
-          </a>
-
-          <a
-            onClick={() => setOpen(false)}
-            href="#"
-            className="hover:text-purple-400 transition-colors"
-          >
-            About
-          </a>
-
-          <a
-            onClick={() => setOpen(false)}
-            href="#"
-            className="hover:text-purple-400 transition-colors"
-          >
-            Contact
-          </a>
+        <nav className="flex flex-col gap-8 text-2xl font-semibold text-white text-center">
+          <a onClick={() => setOpen(false)} href="#" className="hover:text-purple-400 transition-colors">Work</a>
+          <a onClick={() => setOpen(false)} href="#" className="hover:text-purple-400 transition-colors">Services</a>
+          <a onClick={() => setOpen(false)} href="#" className="hover:text-purple-400 transition-colors">About</a>
+          <a onClick={() => setOpen(false)} href="#" className="hover:text-purple-400 transition-colors">Contact</a>
         </nav>
       </div>
     </>
