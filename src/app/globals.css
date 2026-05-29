@@ -8,18 +8,11 @@
   --secondary: #a0a0a0;
   --accent: #6f3cff;
 }
+
 @keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-12px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
 }
 
 .animate-float {
@@ -38,4 +31,6 @@ body {
   color: var(--text);
   overflow-x: hidden;
   scroll-behavior: smooth;
+  padding-left: max(1.5rem, env(safe-area-inset-left));
+  padding-right: max(1.5rem, env(safe-area-inset-right));
 }
