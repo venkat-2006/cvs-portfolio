@@ -2,18 +2,17 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Footer from '@/components/Footer/Footer'
 
-
 export const metadata: Metadata = {
   title: 'CVS GFX | Graphic Designer',
   description:
     'Graphic Designer crafting visuals that command attention. Branding, posters, thumbnails, social media creatives and visual storytelling.',
   openGraph: {
     title: 'CVS GFX | Graphic Designer',
-    description:
-      'Creating visuals that command attention.',
+    description: 'Creating visuals that command attention.',
     type: 'website',
   },
 }
+
 export default function RootLayout({
   children,
 }: {
