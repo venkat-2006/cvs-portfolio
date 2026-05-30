@@ -10,9 +10,17 @@
 }
 
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .animate-float {
@@ -31,4 +39,24 @@ body {
   color: var(--text);
   overflow-x: hidden;
   scroll-behavior: smooth;
+}
+
+/* ADD THIS */
+body {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
