@@ -5,7 +5,7 @@ export default function Categories() {
   const totalWorks = categories.reduce((sum, c) => sum + c.count, 0);
 
   return (
-    <section className="relative w-full bg-[#080808] py-24 overflow-hidden">
+    <section className="relative w-full bg-[#080808] pt-24 pb-40 md:pb-48 lg:pb-56 overflow-hidden">
 
       {/* Ambient orbs */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
@@ -94,6 +94,7 @@ export default function Categories() {
             </div>
           ))}
         </div>
+        <div className="h-10"></div>
 
       </div>
     </section>
