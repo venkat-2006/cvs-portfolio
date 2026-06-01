@@ -8,6 +8,8 @@ import Testimonials from '@/components/Testimonials/Testimonials'
 import About from '@/components/About/About'
 // import Footer from '@/components/Footer/Footer'
 
+import FeaturedClients from "@/components/Clients/FeaturedClients";
+
 export default function Home() {
   return (
     <>
@@ -19,6 +21,7 @@ export default function Home() {
         <Services />
            <About />
             <Testimonials />
+            <FeaturedClients />
       </main>
 
     </>
