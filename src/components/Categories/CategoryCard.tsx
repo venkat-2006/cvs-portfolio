@@ -6,122 +6,164 @@ export default function CategoryCard({
   title,
   description,
   count,
-  icon,
   gradient,
 }: Category) {
   return (
-    <Link href={`/works/${slug}`} className="group block w-full focus-visible:outline-none">
+    <Link
+      href={`/works/${slug}`}
+      className="group block w-full focus-visible:outline-none"
+    >
       <article
         className="
-          relative h-64 md:h-72
-          overflow-hidden rounded-2xl
-          border border-white/10
-          bg-white/5
-          transition-all duration-500
-          hover:scale-[1.02]
-          hover:border-white/20
+          relative
+          h-[320px]
+          md:h-[360px]
+
+          overflow-hidden
+          rounded-[32px]
+
+          border
+          border-white/[0.08]
+
+          bg-white/[0.03]
+
+          transition-all
+          duration-700
+
+          hover:-translate-y-2
+          hover:border-white/[0.18]
         "
       >
-        {/* Gradient Base */}
+        {/* Gradient */}
         <div
-          className={`absolute inset-0 bg-gradient-to-br ${gradient} transition-transform duration-700 group-hover:scale-105`}
+          className={`absolute inset-0 bg-gradient-to-br ${gradient} transition-transform duration-700 group-hover:scale-110`}
         />
 
         {/* Spotlight */}
         <div
-          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          className="
+            absolute
+            inset-0
+            opacity-0
+            group-hover:opacity-100
+            transition-opacity
+            duration-500
+          "
           style={{
             background:
-              "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.13), transparent 65%)",
+              "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.14), transparent 65%)",
           }}
         />
 
-        {/* Glass top sheen */}
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/35" />
+
+        {/* Glass Shine */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, rgba(255,255,255,0.10) 0%, transparent 40%)",
+              "linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 40%)",
           }}
         />
 
-        {/* Dark overlay for text legibility */}
-        <div className="absolute inset-0 bg-black/30" />
-
-        {/* Grain */}
-        <div
-          className="absolute inset-0 opacity-5 mix-blend-overlay"
-          style={{
-            backgroundImage:
-              "radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px)",
-            backgroundSize: "10px 10px",
-          }}
-        />
-
-        {/* Count badge */}
+        {/* Count */}
         <div
           className="
-            absolute top-5 left-5 z-10
-            px-3 py-1.5
+            absolute
+            top-6
+            left-6
+            z-20
+
+            px-4
+            py-2
+
             rounded-full
-            text-xs font-semibold
-            uppercase tracking-widest
-            text-white/70
-            border border-white/10
+
+            border
+            border-white/10
+
             bg-black/30
             backdrop-blur-md
+
+            text-[11px]
+            uppercase
+            tracking-[0.2em]
+            text-white/70
           "
         >
           {count} Works
         </div>
 
-        {/* Inset ring */}
+        {/* Content */}
         <div
           className="
-            absolute inset-0 rounded-2xl
-            ring-1 ring-inset ring-white/10
-            group-hover:ring-white/20
-            transition-all duration-500
-            pointer-events-none
+            absolute
+            inset-0
+            z-10
+
+            flex
+            flex-col
+            items-center
+            justify-center
+
+            text-center
+
+            px-10
           "
-        />
-
-        {/* Content — centred in card */}
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 px-8 text-center">
-
+        >
           <h3
-            className="text-white font-black tracking-tight leading-none text-4xl md:text-5xl"
-            style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+            className="text-white leading-none"
+            style={{
+              fontFamily: "'Bebas Neue', sans-serif",
+              fontSize: "clamp(52px,5vw,72px)",
+              letterSpacing: "0.02em",
+            }}
           >
             {title}
           </h3>
 
-          <p className="text-sm leading-relaxed text-white/70 max-w-[80%] line-clamp-2">
+          <p className="mt-4 text-white/70 text-[15px] leading-relaxed max-w-[85%]">
             {description}
           </p>
 
-          <span
+          <div
             className="
-              mt-1
-              inline-flex items-center justify-center gap-2
-              w-40
-              py-3
+              mt-8
+
+              w-[170px]
+              h-[52px]
+
               rounded-full
-              border border-white/25
+
+              border
+              border-white/20
+
               bg-white/10
               backdrop-blur-md
-              text-white text-xs font-bold uppercase tracking-[0.2em]
-              transition-all duration-300
+
+              flex
+              items-center
+              justify-center
+              gap-2
+
+              text-white
+              text-xs
+              font-semibold
+              uppercase
+              tracking-[0.2em]
+
+              transition-all
+              duration-300
+
               group-hover:bg-white/20
-              group-hover:border-white/40
-              group-hover:scale-105
+              group-hover:border-white/35
             "
           >
-            Explore
-            <span className="text-sm">→</span>
-          </span>
-
+            Explore →
+          </div>
         </div>
+
       </article>
     </Link>
   );
