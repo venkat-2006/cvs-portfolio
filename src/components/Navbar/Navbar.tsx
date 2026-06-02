@@ -31,19 +31,23 @@ export default function Navbar() {
             justify-between
             "
           >
-            <h2
-  className="
-  text-white
-  text-3xl
-  md:text-4xl
-  font-black
-  tracking-wider
-  pl-6
-  "
->
-  CVS GFX
-</h2>
+            {/* Logo anchor that smooth scrolls back to top home marker */}
+            <a href="#hero" className="hover:opacity-80 transition-opacity">
+              <h2
+                className="
+                text-white
+                text-3xl
+                md:text-4xl
+                font-black
+                tracking-wider
+                pl-6
+                "
+              >
+                CVS GFX
+              </h2>
+            </a>
 
+            {/* DESKTOP NAVIGATION: Balanced, readable text links */}
             <nav
               className="
               hidden
@@ -53,12 +57,16 @@ export default function Navbar() {
               text-white
               text-sm
               lg:text-base
+              font-medium
               "
+              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
-              <a href="#" className="hover:text-purple-400 transition-colors duration-300">Work</a>
-              <a href="#" className="hover:text-purple-400 transition-colors duration-300">Services</a>
-              <a href="#" className="hover:text-purple-400 transition-colors duration-300">About</a>
-              <a href="#" className="hover:text-purple-400 transition-colors duration-300">Contact</a>
+              <a href="#showcase" className="hover:text-purple-400 transition-colors duration-300">Work</a>
+              <a href="#services" className="hover:text-purple-400 transition-colors duration-300">Services</a>
+              <a href="#testimonials" className="hover:text-purple-400 transition-colors duration-300">Reviews</a>
+              <a href="#creative-lab" className="hover:text-purple-400 transition-colors duration-300">Lab</a>
+              <a href="#faq" className="hover:text-purple-400 transition-colors duration-300">FAQ</a>
+              <a href="#contact" className="hover:text-purple-400 transition-colors duration-300">Contact</a>
             </nav>
 
             <div className="md:hidden text-white z-[60]">
@@ -68,6 +76,7 @@ export default function Navbar() {
         </Container>
       </header>
 
+      {/* MOBILE NAVIGATION MENU OVERLAY */}
       <div
         className={`
           fixed inset-0 z-40
@@ -77,12 +86,15 @@ export default function Navbar() {
           md:hidden
           ${open ? "translate-y-0" : "-translate-y-full"}
         `}
+        style={{ fontFamily: "'Space Grotesk', sans-serif" }}
       >
         <nav className="flex flex-col gap-8 text-2xl font-semibold text-white text-center">
-          <a onClick={() => setOpen(false)} href="#" className="hover:text-purple-400 transition-colors">Work</a>
-          <a onClick={() => setOpen(false)} href="#" className="hover:text-purple-400 transition-colors">Services</a>
-          <a onClick={() => setOpen(false)} href="#" className="hover:text-purple-400 transition-colors">About</a>
-          <a onClick={() => setOpen(false)} href="#" className="hover:text-purple-400 transition-colors">Contact</a>
+          <a onClick={() => setOpen(false)} href="#showcase" className="hover:text-purple-400 transition-colors">Work</a>
+          <a onClick={() => setOpen(false)} href="#services" className="hover:text-purple-400 transition-colors">Services</a>
+          <a onClick={() => setOpen(false)} href="#testimonials" className="hover:text-purple-400 transition-colors">Reviews</a>
+          <a onClick={() => setOpen(false)} href="#creative-lab" className="hover:text-purple-400 transition-colors">Lab</a>
+          <a onClick={() => setOpen(false)} href="#faq" className="hover:text-purple-400 transition-colors">FAQ</a>
+          <a onClick={() => setOpen(false)} href="#contact" className="hover:text-purple-400 transition-colors">Contact</a>
         </nav>
       </div>
     </>

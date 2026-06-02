@@ -1,5 +1,3 @@
-// src/app/page.tsx
-
 import Navbar from "@/components/Navbar/Navbar";
 import Hero from "@/components/Hero/Hero";
 import Showcase from "@/components/Showcase/Showcase";
@@ -8,38 +6,57 @@ import Services from "@/components/Services/Services";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import About from "@/components/About/About";
 import FeaturedClients from "@/components/Clients/FeaturedClients";
-
-// NEW
 import CreativeLab from "@/components/CreativeLab/CreativeLab";
-
 import FAQ from "@/components/FAQ/FAQ";
 import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   return (
     <>
+      {/* Fixed Global Glass Carriage Navigation Layer */}
       <Navbar />
 
-      <main>
-        <Hero />
+      <main className="w-full relative">
+        {/* Anchor: Back to Top / Home */}
+        <div id="hero">
+          <Hero />
+        </div>
 
-        <Showcase />
+        {/* Anchor: Work Showcase */}
+        <div id="showcase">
+          <Showcase />
+        </div>
 
         <Categories />
 
-        <Services />
+        {/* Anchor: Services Offerings */}
+        <div id="services">
+          <Services />
+        </div>
 
         <About />
 
-        <Testimonials />
+        {/* Anchor: Client Reviews */}
+        <div id="testimonials">
+          <Testimonials />
+        </div>
 
         <FeaturedClients />
 
-        {/* PHASE 11 */}
-        <CreativeLab />
+        {/* Anchor: Creative Playgrounds Lab */}
+        <div id="creative-lab">
+          <CreativeLab />
+        </div>
 
-        <FAQ />
-      
+        {/* Anchor: Frequently Asked Questions */}
+        <div id="faq">
+          <FAQ />
+        </div>
+        
+        {/* Anchor: Secure Contact Terminal Footprint */}
+        <div id="contact">
+          <Footer />
+        </div>
       </main>
     </>
   );
