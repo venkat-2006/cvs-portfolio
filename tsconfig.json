@@ -17,12 +17,11 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "baseUrl": ".",
-    /* FIX: Added this rule to silence the TypeScript 7.0 deprecation warning */
-    "ignoreDeprecations": "6.0",
+    /* FIXED: 'baseUrl' deleted completely to prevent deprecation failures */
     "paths": {
+      /* FIXED: Without baseUrl, modern TS paths must map explicitly using relative dot notations */
       "@/*": [
-        "src/*"
+        "./src/*"
       ]
     },
     "plugins": [
