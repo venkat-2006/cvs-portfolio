@@ -15,9 +15,11 @@ export default function Home() {
     <>
       {/* Fixed Global Glass Carriage Navigation Layer */}
       <Navbar />
+      
 
       <main className="w-full relative">
         {/* Anchor: Back to Top / Home */}
+       
         <div id="hero">
           <Hero />
         </div>

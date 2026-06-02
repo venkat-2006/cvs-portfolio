@@ -19,6 +19,7 @@ export default function Hero() {
       pb-20
       "
     >
+    
       {/* Background Glows */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-20 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[200px]" />
@@ -55,6 +56,7 @@ export default function Hero() {
             lg:mx-0
             "
           >
+             
             <HeroContent />
             <HeroActions />
             <HeroTrust />
