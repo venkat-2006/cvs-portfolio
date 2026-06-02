@@ -18,6 +18,8 @@
     "jsx": "react-jsx",
     "incremental": true,
     "baseUrl": ".",
+    /* FIX: Added this rule to silence the TypeScript 7.0 deprecation warning */
+    "ignoreDeprecations": "6.0",
     "paths": {
       "@/*": [
         "src/*"
