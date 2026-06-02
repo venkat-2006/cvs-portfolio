@@ -3,7 +3,6 @@
 import ShowcaseTitle from './ShowcaseTitle'
 import ShowcaseRow from './ShowcaseRow'
 import { showcaseRows } from '@/data/showcase'
-import Link from 'next/link'
 
 const rowSpeeds = [0.55, 0.4, 0.65, 0.45, 0.5]
 
@@ -78,62 +77,7 @@ export default function Showcase() {
             />
           ))}
         </div>
-
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '20px',
-            marginTop: '72px',
-            padding: '0 20px',
-          }}
-        >
-          <p
-            style={{
-              color: '#a0a0a0',
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: '0.85rem',
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-            }}
-          >
-            + 150 More Projects
-          </p>
-
-          <Link
-            href="#contact"
-            className="archive-btn"
-          >
-            View Full Archive
-            <span>→</span>
-          </Link>
-        </div>
       </div>
-
-      <style jsx>{`
-        .archive-btn {
-          display: inline-flex;
-          align-items: center;
-          gap: 12px;
-          border: 1px solid #1e1e1e;
-          color: #ffffff;
-          padding: 16px 40px;
-          border-radius: 999px;
-          text-decoration: none;
-          font-size: 0.8rem;
-          letter-spacing: 0.15em;
-          text-transform: uppercase;
-          font-family: 'DM Sans', sans-serif;
-          transition: all 0.4s ease;
-        }
-
-        .archive-btn:hover {
-          border-color: #6f3cff;
-          background: rgba(111, 60, 255, 0.1);
-          box-shadow: 0 0 30px rgba(111, 60, 255, 0.2);
-        }
-      `}</style>
     </section>
   )
 }

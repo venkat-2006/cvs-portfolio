@@ -1,11 +1,30 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation"; // Added to detect the active page URL route path
 import { Spin as Hamburger } from "hamburger-react";
 import Container from "../Layout/Container";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname(); // Tracks if we are at "/" or an inner page like "/works/gaming"
+
+  // Helper function to dynamically calculate correct anchors based on folder routes
+  const getHref = (targetId: string) => {
+    if (pathname === "/") {
+      return targetId; // If on home page, use simple hash mapping: "#showcase"
+    }
+    return `/${targetId}`; // If on inner works page, force cross-route re-direct: "/#showcase"
+  };
+
+  const navLinks = [
+    { label: "Work", id: "#showcase" },
+    { label: "Services", id: "#services" },
+    { label: "Reviews", id: "#testimonials" },
+    { label: "Lab", id: "#creative-lab" },
+    { label: "FAQ", id: "#faq" },
+    { label: "Contact", id: "#contact" },
+  ];
 
   return (
     <>
@@ -31,8 +50,8 @@ export default function Navbar() {
             justify-between
             "
           >
-            {/* Logo anchor that smooth scrolls back to top home marker */}
-            <a href="#hero" className="hover:opacity-80 transition-opacity">
+            {/* Logo anchor that dynamically routes home */}
+            <a href={pathname === "/" ? "#hero" : "/"} className="hover:opacity-80 transition-opacity">
               <h2
                 className="
                 text-white
@@ -47,7 +66,7 @@ export default function Navbar() {
               </h2>
             </a>
 
-            {/* DESKTOP NAVIGATION: Balanced, readable text links */}
+            {/* DESKTOP NAVIGATION */}
             <nav
               className="
               hidden
@@ -61,12 +80,15 @@ export default function Navbar() {
               "
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
-              <a href="#showcase" className="hover:text-purple-400 transition-colors duration-300">Work</a>
-              <a href="#services" className="hover:text-purple-400 transition-colors duration-300">Services</a>
-              <a href="#testimonials" className="hover:text-purple-400 transition-colors duration-300">Reviews</a>
-              <a href="#creative-lab" className="hover:text-purple-400 transition-colors duration-300">Lab</a>
-              <a href="#faq" className="hover:text-purple-400 transition-colors duration-300">FAQ</a>
-              <a href="#contact" className="hover:text-purple-400 transition-colors duration-300">Contact</a>
+              {navLinks.map((link) => (
+                <a
+                  key={link.id}
+                  href={getHref(link.id)}
+                  className="hover:text-purple-400 transition-colors duration-300"
+                >
+                  {link.label}
+                </a>
+              ))}
             </nav>
 
             <div className="md:hidden text-white z-[60]">
@@ -89,12 +111,16 @@ export default function Navbar() {
         style={{ fontFamily: "'Space Grotesk', sans-serif" }}
       >
         <nav className="flex flex-col gap-8 text-2xl font-semibold text-white text-center">
-          <a onClick={() => setOpen(false)} href="#showcase" className="hover:text-purple-400 transition-colors">Work</a>
-          <a onClick={() => setOpen(false)} href="#services" className="hover:text-purple-400 transition-colors">Services</a>
-          <a onClick={() => setOpen(false)} href="#testimonials" className="hover:text-purple-400 transition-colors">Reviews</a>
-          <a onClick={() => setOpen(false)} href="#creative-lab" className="hover:text-purple-400 transition-colors">Lab</a>
-          <a onClick={() => setOpen(false)} href="#faq" className="hover:text-purple-400 transition-colors">FAQ</a>
-          <a onClick={() => setOpen(false)} href="#contact" className="hover:text-purple-400 transition-colors">Contact</a>
+          {navLinks.map((link) => (
+            <a
+              key={`mobile-${link.id}`}
+              onClick={() => setOpen(false)}
+              href={getHref(link.id)}
+              className="hover:text-purple-400 transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
       </div>
     </>
