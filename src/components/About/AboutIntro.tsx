@@ -38,6 +38,10 @@ export default function AboutIntro() {
                 alt="CVS GFX Logo"
                 fill
                 priority
+                /* FIXED: Added sizes attribute mapping to your max-width breakpoints 
+                  minus the padding of the inner box wrapper.
+                */
+                sizes="(max-width: 768px) 300px, (max-width: 1280px) 400px, 470px"
                 className="object-contain filter brightness-[0.95]"
               />
             </div>
@@ -206,7 +210,7 @@ export default function AboutIntro() {
             </div>
 
           </div>
-            <div className="h-[72px]"></div>
+          <div className="h-[72px]"></div>
         </div>
 
       </div>

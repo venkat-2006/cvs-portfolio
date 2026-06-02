@@ -10,17 +10,17 @@ export default function HeroVisual() {
 
       w-full
       aspect-square
-max-w-[280px]
-md:max-w-[420px]
-xl:max-w-[520px]
+      max-w-[280px]
+      md:max-w-[420px]
+      xl:max-w-[520px]
 
-mx-auto
+      mx-auto
 
-mt-12
-sm:mt-16
-lg:mt-0
+      mt-12
+      sm:mt-16
+      lg:mt-0
 
-animate-float
+      animate-float
       "
     >
       {/* Outer Glow */}
@@ -97,45 +97,22 @@ animate-float
           blur-xl
           "
         />
+        
         {/* Water Reflection Effect */}
-<div
-  className="
-  absolute
-  inset-0
+        <div
+          className="
+          absolute
+          inset-0
 
-  opacity-30
+          opacity-30
 
-  bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.35),transparent_40%),radial-gradient(circle_at_70%_70%,rgba(168,85,247,0.2),transparent_35%)]
+          bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.35),transparent_40%),radial-gradient(circle_at_70%_70%,rgba(168,85,247,0.2),transparent_35%)]
 
-  animate-pulse
-  "
-/>
+          animate-pulse
+          "
+        />
 
-{/* Logo */}
-<div
-  className="
-  absolute
-  inset-0
-
-  flex
-  items-center
-  justify-center
-  "
->
- <Image
-  src="/images/logo.png"
-  alt="GVS"
-  fill
-  className="
-    object-cover
-    rounded-full
-    mix-blend-screen
-    opacity-90
-  "
-/>
-</div>
-
-        {/* Logo
+        {/* Logo Container */}
         <div
           className="
           absolute
@@ -149,19 +126,19 @@ animate-float
           <Image
             src="/images/logo.png"
             alt="GVS"
-            width={350}
-            height={350}
-            className="
-            w-[70%]
-            h-auto
-
-            opacity-90
-
-            drop-shadow-[0_0_25px_rgba(255,255,255,0.3)]
-            "
+            fill
+            /* Fixes the performance warning by matching your exact max-width breakpoints */
+            sizes="(max-width: 768px) 280px, (max-width: 1280px) 420px, 520px"
+            /* Tells Next.js to preload this image immediately for better LCP performance */
             priority
+            className="
+              object-cover
+              rounded-full
+              mix-blend-screen
+              opacity-90
+            "
           />
-        </div> */}
+        </div>
       </div>
     </div>
   );

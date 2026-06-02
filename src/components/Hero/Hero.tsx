@@ -15,7 +15,7 @@ export default function Hero() {
       items-center
       overflow-hidden
       bg-[#050505]
-      pt-32
+      pt-12
       pb-20
       "
     >

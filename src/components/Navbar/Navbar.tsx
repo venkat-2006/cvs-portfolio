@@ -30,7 +30,8 @@ export default function Navbar() {
     <>
       <header
         className="
-        fixed
+        /* FIXED: Changed from 'fixed' to 'sticky' so it dynamically reserves space in the DOM structure */
+        sticky
         top-0
         left-0
         w-full
