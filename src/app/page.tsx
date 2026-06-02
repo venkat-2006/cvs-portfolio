@@ -12,6 +12,9 @@ import FeaturedClients from "@/components/Clients/FeaturedClients";
 // NEW
 import CreativeLab from "@/components/CreativeLab/CreativeLab";
 
+import FAQ from "@/components/FAQ/FAQ";
+import Footer from "@/components/Footer/Footer";
+
 export default function Home() {
   return (
     <>
@@ -34,6 +37,9 @@ export default function Home() {
 
         {/* PHASE 11 */}
         <CreativeLab />
+
+        <FAQ />
+      
       </main>
     </>
   );
