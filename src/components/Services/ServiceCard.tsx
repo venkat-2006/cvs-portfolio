@@ -14,50 +14,54 @@ export default function ServiceCard({ service, index }: Props) {
 
   return (
     <div
-      className="group relative border-b border-white/[0.08] cursor-pointer"
+      className="group relative border-b border-white/[0.06] cursor-pointer transition-all duration-500"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Glow */}
+      {/* Dynamic Surface Under-Glow Radial Blast */}
       <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 20% 50%, rgba(139,92,246,0.07), transparent 70%)",
+            "radial-gradient(ellipse at 10% 50%, rgba(167, 139, 250, 0.04), transparent 60%)",
         }}
       />
 
-      <div className="relative py-8 md:py-10">
-        <div className="flex items-center justify-between gap-6 lg:gap-10">
+      {/* Main Structural Content Carriage */}
+      <div className="relative py-10 md:py-14 pl-1 sm:pl-3 transition-all duration-500 transform group-hover:translate-x-2">
+        <div className="flex items-center justify-between gap-6 lg:gap-12">
 
-          {/* Left: number + content */}
-          <div className="flex gap-5 md:gap-8 items-start min-w-0">
+          {/* Left Block: Numerical Tag + Detail Text Core */}
+          <div className="flex gap-4 sm:gap-6 md:gap-12 items-start min-w-0">
 
-            {/* Number */}
+            {/* Micro Monospace Index Badge */}
             <span
               className="
                 shrink-0
-                text-[11px] font-semibold
-                uppercase tracking-[0.3em]
-                text-white/20
-                mt-2
-                w-6
-                transition-colors duration-300
-                group-hover:text-white/45
+                text-[11px] sm:text-xs font-bold
+                tracking-[0.2em]
+                text-white/15
+                mt-1.5 md:mt-3.5
+                transition-colors duration-400
+                group-hover:text-purple-400/60
               "
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              style={{ fontFamily: "monospace" }}
             >
-              {service.number}
+              [0{index + 1}]
             </span>
 
-            {/* Text */}
-            <div className="min-w-0">
+            {/* Typography Asset Column */}
+            <div className="min-w-0 text-left">
+              
+              {/* FIXED: Added tracking-[0.03em] to give the letters breathing room */}
               <h3
                 className="
-                  text-white/80 font-black
-                  tracking-tight leading-none
-                  text-2xl sm:text-3xl md:text-4xl xl:text-[52px]
-                  transition-colors duration-300
+                  text-white/70 font-black
+                  uppercase
+                  text-3xl sm:text-4xl md:text-5xl xl:text-[56px]
+                  leading-[1.1] sm:leading-[1]
+                  tracking-[0.03em]
+                  transition-colors duration-400
                   group-hover:text-white
                 "
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
@@ -67,37 +71,40 @@ export default function ServiceCard({ service, index }: Props) {
 
               <p
                 className="
-                  mt-3
-                  text-[13px] sm:text-sm
+                  mt-3.5
+                  text-xs sm:text-sm
                   leading-relaxed
-                  text-white/35
-                  max-w-lg
-                  transition-colors duration-300
-                  group-hover:text-white/60
+                  text-zinc-500
+                  max-w-xl
+                  font-normal
+                  transition-colors duration-400
+                  group-hover:text-zinc-300
                 "
-                style={{ fontFamily: "'DM Sans', sans-serif" }}
+                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 {service.description}
               </p>
 
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 mt-4">
+              {/* Tag Capsule Array Track */}
+              <div className="flex flex-wrap gap-2 mt-5">
                 {service.tags.map((tag) => (
                   <span
                     key={tag}
                     className="
-                      px-2.5 py-1
+                      px-3.5 py-1.5
                       rounded-full
-                      text-[10px] font-semibold
+                      text-[9px] font-bold
                       uppercase tracking-[0.2em]
-                      text-white/30
-                      border border-white/[0.07]
-                      bg-white/[0.03]
-                      transition-all duration-300
-                      group-hover:text-white/55
-                      group-hover:border-white/15
+                      text-white/25
+                      border border-white/[0.05]
+                      bg-white/[0.01]
+                      backdrop-blur-md
+                      transition-all duration-400
+                      group-hover:text-purple-300
+                      group-hover:border-purple-500/30
+                      group-hover:bg-purple-500/[0.02]
                     "
-                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                    style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                   >
                     {tag}
                   </span>
@@ -106,7 +113,7 @@ export default function ServiceCard({ service, index }: Props) {
             </div>
           </div>
 
-          {/* Right: preview slides in from right — desktop only */}
+          {/* Right Block: Studio Render Slider Shield */}
           <div className="hidden lg:block shrink-0">
             <ServicePreview
               image={service.image}

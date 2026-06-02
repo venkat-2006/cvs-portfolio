@@ -59,7 +59,7 @@ export default function WorksPage() {
         {/* 2-col grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {categories.map((cat, i) => (
-            <CategoryCard key={cat.slug} {...cat} />
+            <CategoryCard index={0} key={cat.slug} {...cat} />
           ))}
         </div>
       </div>

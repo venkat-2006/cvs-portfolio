@@ -1,6 +1,28 @@
-import Link from "next/link";
+"use client";
+
+import React from "react";
+import { usePathname } from "next/navigation";
 
 export default function AboutCTA() {
+  const pathname = usePathname();
+
+  // Bulletproof Navigation Engine: Forces cross-route jumping without breaking page layouts
+  const handleStartProjectClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (pathname === "/") {
+      // If already home, smooth glide down to the footer
+      const targetElement = document.getElementById("contact");
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.location.hash = "contact";
+      }
+    } else {
+      // If deep inside a sub-page gallery, redirect to home page with the hash anchor appended
+      window.location.href = "/#contact";
+    }
+  };
+
   return (
     <section className="relative w-full flex justify-center px-4 py-12">
       
@@ -154,8 +176,11 @@ export default function AboutCTA() {
 
           {/* CTA Buttons — Highly interactive responsive click areas */}
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-[260px] sm:max-w-md mb-16">
-            <Link
-              href="/contact"
+            
+            {/* FIXED: Uses the custom click handler to jump layout routes instantly */}
+            <a
+              href="#contact"
+              onClick={handleStartProjectClick}
               className="group relative flex items-center justify-center gap-3 w-full px-6 sm:px-10 py-4.5 sm:py-5 overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               style={{
                 borderRadius: "16px",
@@ -187,7 +212,7 @@ export default function AboutCTA() {
               >
                 →
               </span>
-            </Link>
+            </a>
 
             <a
               href="mailto:hello@cvsgfx.com"

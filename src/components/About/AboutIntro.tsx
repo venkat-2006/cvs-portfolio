@@ -1,24 +1,28 @@
+"use client";
+
+import React from "react";
+import Image from "next/image";
+
 export default function AboutIntro() {
   return (
-    <div className="grid lg:grid-cols-2 gap-20 xl:gap-36 items-center">
+    <div className="grid lg:grid-cols-2 gap-10 xl:gap-16 items-start">
 
       {/* LEFT SIDE */}
       <div className="relative max-w-[430px] xl:max-w-[470px] w-full mx-auto lg:mx-0">
 
-        <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/[0.08]">
+        <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/[0.08] bg-black">
 
-          {/* Background */}
+          {/* Background - FORCED TO PITCH BLACK */}
           <div
-            className="absolute inset-0"
+            className="absolute inset-0 z-0"
             style={{
-              background:
-                "linear-gradient(145deg, #1a1035 0%, #0d1b35 45%, #0a2540 100%)",
+              background: "#000000",
             }}
           />
 
           {/* Grid Overlay */}
           <div
-            className="absolute inset-0 opacity-[0.06]"
+            className="absolute inset-0 opacity-[0.06] z-10"
             style={{
               backgroundImage:
                 "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
@@ -26,26 +30,30 @@ export default function AboutIntro() {
             }}
           />
 
-          {/* Glow */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(circle at 50% 20%, rgba(139,92,246,.28), transparent 60%)",
-            }}
-          />
+          {/* LOGO POSITIONING */}
+          <div className="absolute inset-0 flex items-center justify-center p-16 pt-4 pb-12 z-20">
+            <div className="relative w-full h-full">
+              <Image
+                src="/images/logo.png"
+                alt="CVS GFX Logo"
+                fill
+                priority
+                className="object-contain filter brightness-[0.95]"
+              />
+            </div>
+          </div>
 
-          {/* Bottom Gradient */}
+          {/* Bottom Gradient Overlay */}
           <div
-            className="absolute inset-x-0 bottom-0 h-[45%]"
+            className="absolute inset-x-0 bottom-0 h-[45%] z-30 pointer-events-none"
             style={{
               background:
-                "linear-gradient(to top, rgba(0,0,0,.95), transparent)",
+                "linear-gradient(to top, #000000 20%, transparent 100%)",
             }}
           />
 
           {/* Name Block */}
-          <div className="absolute bottom-16 left-10 z-20">
+          <div className="absolute bottom-16 left-10 z-40">
 
             <h3
               className="text-white font-black leading-none"
@@ -77,7 +85,7 @@ export default function AboutIntro() {
             absolute
             bottom-8
             right-8
-            z-30
+            z-50
             px-5
             py-3
             rounded-full
@@ -153,63 +161,53 @@ export default function AboutIntro() {
           worldwide to build visuals that actually perform.
         </p>
 
-        {/* Skills */}
-      {/* Services */}
-<div className="pt-10">
+        {/* Skills & Services Grid */}
+        <div className="pt-4">
+          <div className="pt-2">
 
- {/* Services */}
-<div className="pt-10">
+            <div className="grid grid-cols-2 gap-5 max-w-[650px]">
 
-  <div className="grid grid-cols-2 gap-5 max-w-[650px]">
+              {[
+                "Thumbnail Design",
+                "Poster Art",
+                "Brand Identity",
+                "Esports",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="
+                    h-[88px]
+                    rounded-[24px]
+                    border
+                    border-white/[0.08]
+                    bg-white/[0.02]
+                    backdrop-blur-md
+                    flex
+                    items-center
+                    justify-center
+                    transition-all
+                    duration-300
+                    hover:-translate-y-1
+                    hover:border-white/[0.15]
+                    hover:bg-white/[0.03]
+                  "
+                >
+                  <span
+                    className="text-[15px] font-medium text-white/80 text-center"
+                    style={{
+                      fontFamily: "'DM Sans', sans-serif",
+                    }}
+                  >
+                    {item}
+                  </span>
+                </div>
+              ))}
 
-    {[
-      "Thumbnail Design",
-      "Poster Art",
-      "Brand Identity",
-      "Esports",
-    ].map((item) => (
-      <div
-        key={item}
-        className="
-          h-[88px]
+            </div>
 
-          rounded-[24px]
-          border
-          border-white/[0.08]
-
-          bg-white/[0.02]
-          backdrop-blur-md
-
-          flex
-          items-center
-          justify-center
-
-          transition-all
-          duration-300
-
-          hover:-translate-y-1
-          hover:border-white/[0.15]
-          hover:bg-white/[0.03]
-        "
-      >
-        <span
-          className="text-[15px] font-medium text-white/80 text-center"
-          style={{
-            fontFamily: "'DM Sans', sans-serif",
-          }}
-        >
-          {item}
-        </span>
-      </div>
-    ))}
-
-  </div>
-
-</div>
-
-<div className="h-[72px]"></div>
-
-</div>
+          </div>
+            <div className="h-[72px]"></div>
+        </div>
 
       </div>
 

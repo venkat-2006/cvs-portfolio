@@ -3,76 +3,75 @@ import ServiceCard from "./ServiceCard";
 
 export default function Services() {
   return (
-    <section className="relative w-full bg-[#080808] py-24 md:py-32 lg:py-40 overflow-hidden">
-
-      {/* Ambient orb */}
+    <section 
+      id="services"
+      className="relative w-full bg-[#050507] py-20 md:py-32 lg:py-40 overflow-hidden"
+    >
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
         <div
-          className="absolute top-1/2 -left-40 w-[700px] h-[700px] rounded-full -translate-y-1/2"
+          className="absolute top-1/2 -left-40 w-[800px] h-[800px] rounded-full -translate-y-1/2 opacity-60 mix-blend-screen"
           style={{
             background:
-              "radial-gradient(circle, rgba(139,92,246,0.05) 0%, transparent 65%)",
+              "radial-gradient(circle, rgba(147, 51, 234, 0.06) 0%, transparent 70%)",
+            filter: "blur(120px)",
           }}
         />
         <div
-          className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full"
+          className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-40 mix-blend-screen"
           style={{
             background:
-              "radial-gradient(circle, rgba(236,72,153,0.03) 0%, transparent 65%)",
+              "radial-gradient(circle, rgba(59, 130, 246, 0.04) 0%, transparent 70%)",
+            filter: "blur(100px)",
           }}
         />
       </div>
 
-      <div className="relative mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-16">
+      <div className="relative mx-auto max-w-[1440px] px-6 sm:px-10 lg:px-16">
 
-        {/* Eyebrow */}
-        <div className="flex items-center gap-3 mb-10">
-          <span className="block h-px w-8 bg-zinc-700" />
+        {/* Minimal Paced Eyebrow Row */}
+        <div className="flex items-center gap-3 mb-8 md:mb-12">
+          <span className="block h-px w-6 bg-purple-500/40" />
           <span
-            className="text-[10px] font-semibold uppercase text-zinc-500"
-            style={{
-              letterSpacing: "0.55em",
-              fontFamily: "'DM Sans', sans-serif",
-            }}
+            className="text-[10px] font-bold uppercase tracking-[0.4em] text-purple-400"
+            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
-            Services
+            Capabilities Matrix
           </span>
         </div>
 
-        {/* Header row */}
+        {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-
           <h2
-            className="text-white leading-[0.9] shrink-0"
+            className="text-white font-black uppercase text-left
+                       text-[52px] sm:text-[76px] md:text-[96px] lg:text-[110px] xl:text-[120px]
+                       leading-[1.05] sm:leading-[1] md:leading-[0.85]
+                       tracking-[0.02em]"
             style={{
               fontFamily: "'Bebas Neue', sans-serif",
-              fontSize: "clamp(64px, 8vw, 100px)",
-              letterSpacing: "0.01em",
             }}
           >
             What I Do
           </h2>
 
           <p
-            className="text-[15px] leading-relaxed text-zinc-400 lg:max-w-[280px] lg:pb-2"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
+            className="text-sm md:text-base leading-relaxed text-zinc-400 lg:max-w-[340px] lg:pb-2 text-left"
+            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
-            Creative solutions for brands, creators and businesses that want to stand out.
+            Engineered visual assets and creative solutions for premium brands, creators, and platforms seeking distinct market authority.
           </p>
-
         </div>
 
-        {/* Divider */}
-        <div className="w-full h-px bg-white/[0.08] mt-12 lg:mt-16" />
+        {/* Top Boundary Line Divider */}
+        <div className="w-full h-px bg-white/[0.08] mt-12 md:mt-16" />
 
-        {/* Cards */}
-        <div>
+        {/* Services Iteration Row Map Track */}
+        <div className="w-full flex flex-col">
           {services.map((service, i) => (
             <ServiceCard key={service.title} service={service} index={i} />
           ))}
         </div>
-         <div className="h-10"></div>
 
+        <div className="h-10" />
       </div>
     </section>
   );

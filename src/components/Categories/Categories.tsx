@@ -5,9 +5,9 @@ export default function Categories() {
   const totalWorks = categories.reduce((sum, c) => sum + c.count, 0);
 
   return (
-    <section className="relative w-full bg-[#080808] pt-24 pb-40 md:pb-48 lg:pb-56 overflow-hidden">
+    <section className="relative w-full bg-[#050507] pt-24 pb-40 md:pb-48 lg:pb-56 overflow-hidden">
 
-      {/* Ambient Orbs */}
+      {/* Ambient Premium Lighting Orbs */}
       <div
         className="pointer-events-none absolute inset-0 overflow-hidden"
         aria-hidden="true"
@@ -16,7 +16,7 @@ export default function Categories() {
           className="absolute -top-80 -left-80 w-[800px] h-[800px] rounded-full"
           style={{
             background:
-              "radial-gradient(circle, rgba(124,58,237,0.07) 0%, transparent 60%)",
+              "radial-gradient(circle, rgba(147,51,234,0.05) 0%, transparent 60%)",
           }}
         />
 
@@ -24,7 +24,7 @@ export default function Categories() {
           className="absolute -top-40 right-0 w-[600px] h-[600px] rounded-full"
           style={{
             background:
-              "radial-gradient(circle, rgba(236,72,153,0.05) 0%, transparent 60%)",
+              "radial-gradient(circle, rgba(59,130,246,0.03) 0%, transparent 60%)",
           }}
         />
       </div>
@@ -33,28 +33,29 @@ export default function Categories() {
 
         {/* Eyebrow */}
         <div className="flex items-center gap-3 mb-10">
-          <span className="block h-px w-8 bg-zinc-700" />
+          <span className="block h-px w-8 bg-purple-500/40" />
 
           <span
-            className="text-[10px] font-semibold uppercase text-zinc-500"
+            className="text-[10px] font-bold uppercase text-purple-400"
             style={{
-              letterSpacing: "0.55em",
-              fontFamily: "'DM Sans', sans-serif",
+              letterSpacing: "0.45em",
+              fontFamily: "'Space Grotesk', sans-serif",
             }}
           >
             Portfolio Collections
           </span>
         </div>
 
-        {/* Header */}
+        {/* Header Layout */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-20">
 
           <h2
-            className="text-white leading-[0.9]"
+            className="text-white tracking-tight uppercase"
             style={{
               fontFamily: "'Bebas Neue', sans-serif",
-              fontSize: "clamp(80px, 9vw, 130px)",
-              letterSpacing: "0.01em",
+              fontSize: "clamp(64px, 8vw, 115px)",
+              lineHeight: "0.95",
+              letterSpacing: "0.02em",
             }}
           >
             Explore
@@ -63,23 +64,23 @@ export default function Categories() {
           </h2>
 
           <div
-            className="lg:max-w-[340px] flex flex-col gap-5 lg:pb-3"
+            className="lg:max-w-[340px] flex flex-col gap-5 lg:pb-3 text-left"
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'Space Grotesk', sans-serif",
             }}
           >
-            <p className="text-[15px] leading-relaxed text-zinc-400">
-              Browse thumbnails, posters and creative work organized by niche.
+            <p className="text-[14px] leading-relaxed text-zinc-400 font-normal">
+              Browse premium thumbnails, custom poster designs, and visual branding assets meticulously organized by niche.
             </p>
 
             <div className="flex items-center gap-2.5">
               <span className="relative flex h-2 w-2 shrink-0">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-50" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
               </span>
 
-              <span className="text-[11px] text-zinc-500">
-                {totalWorks}+ works across {categories.length} collections
+              <span className="text-[11px] font-medium text-zinc-500 tracking-wide uppercase">
+                {totalWorks}+ Assets Across {categories.length} Nodes
               </span>
             </div>
           </div>
@@ -96,10 +97,13 @@ export default function Categories() {
                 animationFillMode: "both",
               }}
             >
-              <CategoryCard {...category} />
+              {/* 🛠️ FIXED: Added index prop i to fulfill type parameters safely */}
+              <CategoryCard {...category} index={i} />
             </div>
           ))}
         </div>
+        
+        <div className="h-[52px]"></div>
 
       </div>
     </section>
