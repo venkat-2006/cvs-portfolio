@@ -62,7 +62,7 @@ export default function Categories() {
               {[
                 { num: `${totalWorks}+`, label: "Total Assets" },
                 { num: `${categories.length}`, label: "Categories" },
-                { num: "3+", label: "Years Active" },
+                { num: "2+", label: "Years Active" },
               ].map(({ num, label }) => (
                 <div key={label} className="flex flex-col gap-1">
                   <span
@@ -119,6 +119,7 @@ export default function Categories() {
             </div>
           ))}
         </div>
+        <div className="h-2"></div>
 
       </div>
     </section>

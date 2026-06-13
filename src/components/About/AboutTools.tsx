@@ -1,3 +1,4 @@
+import Image from "next/image";
 const tools = [
   {
     name: "Photoshop",
@@ -7,11 +8,35 @@ const tools = [
     border: "rgba(49,119,185,0.28)",
     glow: "rgba(49,119,185,0.18)",
     logo: (
-      <svg viewBox="0 0 240 234" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
-        <rect width="240" height="234" rx="42" fill="#001E36"/>
-        <path d="M54 164V69.6h36.8c7.47 0 13.87 1.4 19.2 4.2 5.33 2.8 9.4 6.73 12.2 11.8 2.8 5.07 4.2 10.87 4.2 17.4 0 6.67-1.47 12.53-4.4 17.6-2.93 5.07-7.13 9-12.6 11.8-5.47 2.8-11.93 4.2-19.4 4.2H72.4V164H54zm18.4-43.6h17.2c6.27 0 11.07-1.6 14.4-4.8 3.33-3.2 5-7.6 5-13.2 0-5.73-1.67-10.2-5-13.4-3.33-3.2-8.13-4.8-14.4-4.8H72.4v36.2z" fill="#31A8FF"/>
-      </svg>
-    ),
+  <svg
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-8 h-8"
+  >
+    <rect width="48" height="48" rx="10" fill="#001E36" />
+    <rect
+      x="2"
+      y="2"
+      width="44"
+      height="44"
+      rx="8"
+      stroke="#31A8FF"
+      strokeWidth="1.5"
+      fill="none"
+    />
+    <text
+      x="24"
+      y="31"
+      textAnchor="middle"
+      fill="#31A8FF"
+      fontSize="18"
+      fontWeight="700"
+      fontFamily="Arial, sans-serif"
+    >
+      Ps
+    </text>
+  </svg>
+),
   },
   {
     name: "Illustrator",
@@ -20,49 +45,74 @@ const tools = [
     color: "rgba(255,122,0,0.10)",
     border: "rgba(255,122,0,0.28)",
     glow: "rgba(255,122,0,0.15)",
-    logo: (
-      <svg viewBox="0 0 240 234" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
-        <rect width="240" height="234" rx="42" fill="#330000"/>
-        <path d="M100.4 144.4H72l-6.4 19.6H46l30.4-94.4h27.2L134 164h-27.2l-6.4-19.6zm-5.2-16L84 93.6l-11.2 34.8h22.4zM152 69.6h18.4V164H152V69.6z" fill="#FF9A00"/>
-      </svg>
-    ),
+   logo: (
+  <svg
+    viewBox="0 0 48 48"
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-8 h-8"
+  >
+    <rect width="48" height="48" rx="10" fill="#330000" />
+    <rect
+      x="2"
+      y="2"
+      width="44"
+      height="44"
+      rx="8"
+      stroke="#FF9A00"
+      strokeWidth="1.5"
+      fill="none"
+    />
+    <text
+      x="24"
+      y="31"
+      textAnchor="middle"
+      fill="#FF9A00"
+      fontSize="18"
+      fontWeight="700"
+      fontFamily="Arial, sans-serif"
+    >
+      Ai
+    </text>
+  </svg>
+),
   },
-  {
-    name: "Magnific",
-    abbr: "Ma",
-    category: "AI Upscaler",
-    color: "rgba(255,110,199,0.10)",
-    border: "rgba(255,110,199,0.28)",
-    glow: "rgba(255,110,199,0.18)",
-    logo: (
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
-        <rect width="48" height="48" rx="10" fill="#0f0f0f"/>
-        <circle cx="24" cy="24" r="10" fill="none" stroke="#FF6EC7" strokeWidth="2.5"/>
-        <circle cx="24" cy="24" r="5" fill="#FF6EC7"/>
-        <circle cx="24" cy="24" r="2" fill="#0f0f0f"/>
-        <line x1="24" y1="10" x2="24" y2="7" stroke="#FF6EC7" strokeWidth="2" strokeLinecap="round"/>
-        <line x1="24" y1="41" x2="24" y2="38" stroke="#FF6EC7" strokeWidth="2" strokeLinecap="round"/>
-        <line x1="10" y1="24" x2="7" y2="24" stroke="#FF6EC7" strokeWidth="2" strokeLinecap="round"/>
-        <line x1="41" y1="24" x2="38" y2="24" stroke="#FF6EC7" strokeWidth="2" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
-    name: "ChatGPT",
-    abbr: "Gp",
-    category: "AI Assistant",
-    color: "rgba(16,163,127,0.10)",
-    border: "rgba(16,163,127,0.28)",
-    glow: "rgba(16,163,127,0.18)",
-    logo: (
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
-        <rect width="48" height="48" rx="10" fill="#10A37F"/>
-        <path d="M24 12c-4.4 0-8 3.6-8 8 0 2.2.9 4.2 2.3 5.7L12 34h6l2-4h8l2 4h6l-6.3-8.3c1.4-1.5 2.3-3.5 2.3-5.7 0-4.4-3.6-8-8-8zm0 4c2.2 0 4 1.8 4 4s-1.8 4-4 4-4-1.8-4-4 1.8-4 4-4z" fill="white"/>
-      </svg>
-    ),
-  },
+{
+  name: "Magnific",
+  abbr: "Ma",
+  category: "AI Enhancement",
+  color: "rgba(255,110,199,0.10)",
+  border: "rgba(255,110,199,0.28)",
+  glow: "rgba(255,110,199,0.18)",
+  logo: (
+  <Image
+    src="/images/magnific.png"
+    width={32}
+    height={32}
+    alt="Magnific"
+  />
+),
+},
+{
+  name: "ChatGPT",
+  abbr: "GPT",
+  category: "Creative Intelligence",
+  color: "rgba(16,163,127,0.10)",
+  border: "rgba(16,163,127,0.28)",
+  glow: "rgba(16,163,127,0.18)",
+  logo: (
+  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
+    <rect width="48" height="48" rx="10" fill="#10A37F"/>
+    <image
+      href="https://cdn.jsdelivr.net/npm/@lobehub/icons-static-png@latest/dark/openai.png"
+      x="6"
+      y="6"
+      width="36"
+      height="36"
+    />
+  </svg>
+),
+},
 ];
-
 export default function AboutTools() {
   return (
     <div>

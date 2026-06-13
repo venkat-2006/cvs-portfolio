@@ -1,7 +1,7 @@
 const stats = [
   { value: "500+", label: "Projects Completed", sub: "Across all categories" },
   { value: "40+", label: "Happy Clients", sub: "Worldwide" },
-  { value: "2+", label: "Years Active", sub: "Since 2022" },
+  { value: "2+", label: "Years Active", sub: "Since 2023" },
   { value: "∞", label: "Creative Drive", sub: "Never Stops" },
 ];
 

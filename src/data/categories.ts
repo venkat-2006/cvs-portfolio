@@ -41,12 +41,12 @@ export const categories: Category[] = [
     gradient: "from-purple-500 via-indigo-500 to-blue-500",
   },
   {
-    slug: "sports",
-    title: "Sports",
-    description: "Athlete and tournament content.",
+    slug: "filmy",
+    title: "Filmy",
+    description: "Movie edits, cinematic content and entertainment creatives.",
     count: 25,
-    icon: "⚽",
-    gradient: "from-orange-500 via-red-500 to-rose-500",
+    icon: "🎬",
+    gradient: "from-amber-500 via-orange-500 to-red-500",
   },
   {
     slug: "insta-covers",
