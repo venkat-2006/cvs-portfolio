@@ -87,7 +87,7 @@ import ShowcaseTitle from './ShowcaseTitle'
 import ShowcaseRow from './ShowcaseRow'
 import { showcaseRows } from '@/data/showcase'
 
-const rowSpeeds = [1.6, 1.2, 1.9]
+const rowSpeeds = [1.6, 1.2, 1.9, 1.4, 1.7]
 
 export default function Showcase() {
   return (
@@ -144,7 +144,7 @@ export default function Showcase() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '12px',
+            gap: '10px',
           }}
         >
           {showcaseRows.map((row, i) => (

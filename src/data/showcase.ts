@@ -1,90 +1,84 @@
-// export type ShowcaseItem = {
-//   title: string
-//   image: string
-//   category: string
-//   year: string
-// }
-
-// export const showcaseRows: ShowcaseItem[][] = [
-//   // Row 1 → Right
-//   [
-//     { title: 'Gaming Poster', image: '/works/work1.webp', category: 'Poster Design', year: '2024' },
-//     { title: 'Neon Brand Kit', image: '/works/work2.webp', category: 'Branding', year: '2024' },
-//     { title: 'YouTube Thumbnail', image: '/works/work3.webp', category: 'Thumbnail', year: '2024' },
-//     { title: 'Event Poster', image: '/works/work4.webp', category: 'Poster Design', year: '2023' },
-//     { title: 'Logo Identity', image: '/works/work5.webp', category: 'Branding', year: '2024' },
-//     { title: 'Merch Design', image: '/works/work6.webp', category: 'Apparel', year: '2023' },
-//   ],
-//   // Row 2 ← Left
-//   [
-//     { title: 'Social Campaign', image: '/works/work7.webp', category: 'Social Media', year: '2024' },
-//     { title: 'Album Cover', image: '/works/work8.webp', category: 'Music Art', year: '2024' },
-//     { title: 'Motion Reel', image: '/works/work9.webp', category: 'Motion', year: '2023' },
-//     { title: 'Sports Edit', image: '/works/work10.webp', category: 'Poster Design', year: '2024' },
-//     { title: 'Brand Campaign', image: '/works/work11.webp', category: 'Branding', year: '2024' },
-//     { title: 'Cyberpunk Pack', image: '/works/work12.webp', category: 'Digital Art', year: '2023' },
-//   ],
-//   // Row 3 → Right
-//   [
-//     { title: 'Twitch Overlay', image: '/works/work13.webp', category: 'Stream Design', year: '2024' },
-//     { title: 'NFT Collection', image: '/works/work14.webp', category: 'Digital Art', year: '2023' },
-//     { title: 'Esports Logo', image: '/works/work15.webp', category: 'Branding', year: '2024' },
-//     { title: 'Product Banner', image: '/works/work16.webp', category: 'Banner', year: '2024' },
-//     { title: 'Dark Poster', image: '/works/work17.webp', category: 'Poster Design', year: '2023' },
-//     { title: 'Type Poster', image: '/works/work18.webp', category: 'Typography', year: '2024' },
-//   ],
-//   // Row 4 ← Left
-//   [
-//     { title: 'Anime Edit', image: '/works/work19.webp', category: 'Digital Art', year: '2024' },
-//     { title: 'Luxury Brand', image: '/works/work20.webp', category: 'Branding', year: '2024' },
-//     { title: 'Concert Poster', image: '/works/work21.webp', category: 'Poster Design', year: '2023' },
-//     { title: 'App UI Kit', image: '/works/work22.webp', category: 'UI Design', year: '2024' },
-//     { title: 'Photo Manip', image: '/works/work23.webp', category: 'Photo Art', year: '2023' },
-//     { title: 'Retro Pack', image: '/works/work24.webp', category: 'Design Pack', year: '2024' },
-//   ],
-//   // Row 5 → Right
-//   [
-//     { title: 'Minimal Logo', image: '/works/work25.webp', category: 'Branding', year: '2024' },
-//     { title: 'VFX Composite', image: '/works/work26.webp', category: 'Motion', year: '2024' },
-//     { title: 'Fashion Post', image: '/works/work27.webp', category: 'Social Media', year: '2023' },
-//     { title: 'Gaming Banner', image: '/works/work28.webp', category: 'Banner', year: '2024' },
-//     { title: 'Dark Brand', image: '/works/work29.webp', category: 'Branding', year: '2024' },
-//     { title: 'Glitch Art', image: '/works/work30.webp', category: 'Digital Art', year: '2023' },
-//   ],
-// ]
 export type ShowcaseItem = {
   title: string
   image: string
-  category: string
-  year: string
 }
 
 export const showcaseRows: ShowcaseItem[][] = [
-  // Row 1 → Right
+  // Row 1 → Right (13 items)
   [
-    { title: 'Gaming Poster', image: '/works/work1.webp', category: 'Poster Design', year: '2024' },
-    { title: 'Neon Brand Kit', image: '/works/work2.webp', category: 'Branding', year: '2024' },
-    { title: 'YouTube Thumbnail', image: '/works/work3.webp', category: 'Thumbnail', year: '2024' },
-    { title: 'Event Poster', image: '/works/work4.webp', category: 'Poster Design', year: '2023' },
-    { title: 'Logo Identity', image: '/works/work5.webp', category: 'Branding', year: '2024' },
-    { title: 'Merch Design', image: '/works/work6.webp', category: 'Apparel', year: '2023' },
+    { title: '1st Updates', image: '/images/ScrollingThumbnails/1st Updates.jpg' },
+    { title: '08 Feb Live', image: '/images/ScrollingThumbnails/08 Feb Live.jpg' },
+    { title: '13 Updates', image: '/images/ScrollingThumbnails/13 Updates.png' },
+    { title: '15 Updates', image: '/images/ScrollingThumbnails/15 Updates.png' },
+    { title: '25 Feb Updates', image: '/images/ScrollingThumbnails/25 Feb Updates.jpg' },
+    { title: '31st Live', image: '/images/ScrollingThumbnails/31st Live.png' },
+    { title: 'Account Jgratha nna', image: '/images/ScrollingThumbnails/Account Jgratha nna.png' },
+    { title: 'Amul', image: '/images/ScrollingThumbnails/Amul.jpg' },
+    { title: 'Annagaru vostharu H', image: '/images/ScrollingThumbnails/Annagaru vostharu H.jpg' },
+    { title: 'Backroms', image: '/images/ScrollingThumbnails/Backroms.png' },
+    { title: 'Bebamma Live 2', image: '/images/ScrollingThumbnails/Bebamma Live 2.png' },
+    { title: 'Begunkondar', image: '/images/ScrollingThumbnails/Begunkondar.jpg' },
+    { title: 'Booyah Assam', image: '/images/ScrollingThumbnails/Booyah Assam.png' },
   ],
-  // Row 2 ← Left
+  // Row 2 ← Left (12 items)
   [
-    { title: 'Social Campaign', image: '/works/work7.webp', category: 'Social Media', year: '2024' },
-    { title: 'Album Cover', image: '/works/work8.webp', category: 'Music Art', year: '2024' },
-    { title: 'Motion Reel', image: '/works/work9.webp', category: 'Motion', year: '2023' },
-    { title: 'Sports Edit', image: '/works/work10.webp', category: 'Poster Design', year: '2024' },
-    { title: 'Brand Campaign', image: '/works/work11.webp', category: 'Branding', year: '2024' },
-    { title: 'Cyberpunk Pack', image: '/works/work12.webp', category: 'Digital Art', year: '2023' },
+    { title: 'Border 2 H', image: '/images/ScrollingThumbnails/Border 2 H.jpg' },
+    { title: 'Brain Stroke4', image: '/images/ScrollingThumbnails/Brain Stroke4.png' },
+    { title: 'Chernobyl', image: '/images/ScrollingThumbnails/Chernobyl.jpg' },
+    { title: 'Clashx24 is live22', image: '/images/ScrollingThumbnails/Clashx24 is live22.png' },
+    { title: 'Clashx24 is livef', image: '/images/ScrollingThumbnails/Clashx24 is livef.png' },
+    { title: 'CR7', image: '/images/ScrollingThumbnails/CR7.jpg' },
+    { title: 'Elon 2.0', image: '/images/ScrollingThumbnails/Elon 2.0.jpg' },
+    { title: 'Epstein Files2', image: '/images/ScrollingThumbnails/Epstein Files2.jpg' },
+    { title: 'Euphoria Review H', image: '/images/ScrollingThumbnails/Euphoria Review H.jpg' },
+    { title: 'Evadra vadu', image: '/images/ScrollingThumbnails/Evadra vadu.png' },
+    { title: 'Hindu vs Muslim', image: '/images/ScrollingThumbnails/Hindu vs Muslim.png' },
+    { title: 'I Got rarest Bundles', image: '/images/ScrollingThumbnails/I Got rarest Bundles.jpg' },
   ],
-  // Row 3 → Right
+  // Row 3 → Right (13 items)
   [
-    { title: 'Twitch Overlay', image: '/works/work13.webp', category: 'Stream Design', year: '2024' },
-    { title: 'NFT Collection', image: '/works/work14.webp', category: 'Digital Art', year: '2023' },
-    { title: 'Esports Logo', image: '/works/work15.webp', category: 'Branding', year: '2024' },
-    { title: 'Product Banner', image: '/works/work16.webp', category: 'Banner', year: '2024' },
-    { title: 'Dark Poster', image: '/works/work17.webp', category: 'Poster Design', year: '2023' },
-    { title: 'Type Poster', image: '/works/work18.webp', category: 'Typography', year: '2024' },
+    { title: 'Indian Theft Auto', image: '/images/ScrollingThumbnails/Indian Theft Auto.jpg' },
+    { title: 'Jai babu', image: '/images/ScrollingThumbnails/Jai babu.jpg' },
+    { title: 'Japan_s Forest Therapy', image: '/images/ScrollingThumbnails/Japan_s Forest Therapy.jpg' },
+    { title: 'Jee2027', image: '/images/ScrollingThumbnails/Jee2027.png' },
+    { title: 'Kashi Vlog 2', image: '/images/ScrollingThumbnails/Kashi Vlog 2.jpg' },
+    { title: 'KV 18 vs GBO', image: '/images/ScrollingThumbnails/KV 18 vs GBO.png' },
+    { title: 'Land Investment', image: '/images/ScrollingThumbnails/Land Investment.png' },
+    { title: 'Laptops guide', image: '/images/ScrollingThumbnails/Laptops guide.png' },
+    { title: 'Lucky Star Guild Trails-Recovered', image: '/images/ScrollingThumbnails/Lucky Star Guild Trails-Recovered.jpg' },
+    { title: 'Mac Book Neo3.1', image: '/images/ScrollingThumbnails/Mac Book Neo3.1.png' },
+    { title: 'Missu Live', image: '/images/ScrollingThumbnails/Missu Live.png' },
+    { title: 'MJ Documentary', image: '/images/ScrollingThumbnails/MJ Documentary.png' },
+    { title: 'Naa Anveshana', image: '/images/ScrollingThumbnails/Naa Anveshana.jpg' },
+  ],
+  // Row 4 ← Left (12 items)
+  [
+    { title: 'Nak Interest poindhi', image: '/images/ScrollingThumbnails/Nak Interest poindhi.png' },
+    { title: 'Nani raking', image: '/images/ScrollingThumbnails/Nani raking.jpg' },
+    { title: 'Neet', image: '/images/ScrollingThumbnails/Neet.jpg' },
+    { title: 'NSG Swarup FF Live', image: '/images/ScrollingThumbnails/NSG Swarup FF Live.png' },
+    { title: 'NSG Swarup GTA 5 Live', image: '/images/ScrollingThumbnails/NSG Swarup GTA 5 Live.jpg' },
+    { title: 'NTR Neel Live', image: '/images/ScrollingThumbnails/NTR Neel Live.png' },
+    { title: 'Onimusha 1', image: '/images/ScrollingThumbnails/Onimusha 1.png' },
+    { title: 'Passport', image: '/images/ScrollingThumbnails/Passport.jpg' },
+    { title: 'Peddi Spoiler Talk', image: '/images/ScrollingThumbnails/Peddi Spoiler Talk.png' },
+    { title: 'Raja Saab H', image: '/images/ScrollingThumbnails/Raja Saab H.jpg' },
+    { title: 'Rao Bahadur H', image: '/images/ScrollingThumbnails/Rao Bahadur H.png' },
+    { title: 'SAPTHA CHIRANJEEVA_S', image: '/images/ScrollingThumbnails/SAPTHA CHIRANJEEVA_S.jpg' },
+  ],
+  // Row 5 → Right (12 items)
+  [
+    { title: 'Scam 1992', image: '/images/ScrollingThumbnails/Scam 1992.jpg' },
+    { title: 'SG Ugadi live', image: '/images/ScrollingThumbnails/SG Ugadi live.jpg' },
+    { title: 'Shoott kv18', image: '/images/ScrollingThumbnails/Shoott kv18.jpg' },
+    { title: 'Street Food', image: '/images/ScrollingThumbnails/Street Food.jpg' },
+    { title: 'TEL vs HIN', image: '/images/ScrollingThumbnails/TEL vs HIN.png' },
+    { title: 'TRISHANKU SWARGAM2', image: '/images/ScrollingThumbnails/TRISHANKU SWARGAM2.jpg' },
+    { title: 'Trump', image: '/images/ScrollingThumbnails/Trump.jpg' },
+    { title: 'Under the Stars1', image: '/images/ScrollingThumbnails/Under the Stars1.jpg' },
+    { title: 'Varanasi Mahesh babu Interview2', image: '/images/ScrollingThumbnails/Varanasi Mahesh babu Interview2.jpg' },
+    { title: 'VD14 Teaser Review', image: '/images/ScrollingThumbnails/VD14 Teaser Review.jpg' },
+    { title: 'WDY 2.20', image: '/images/ScrollingThumbnails/WDY 2.20.jpg' },
+    { title: 'Why Hate Biharis', image: '/images/ScrollingThumbnails/Why Hate Biharis.jpg' },
   ],
 ]
