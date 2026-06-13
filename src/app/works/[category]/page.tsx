@@ -1,10 +1,10 @@
-"use client"; // Fixed: Prevents the "Event handlers cannot be passed" crash
+"use client";
 
 import React, { use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { categories } from "@/data/categories";
-import { works, Work } from "@/data/works";
+import { works } from "@/data/works";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 
@@ -14,138 +14,7 @@ type Props = {
   }>;
 };
 
-// ─── PREMIUM ASYMMETRIC GRID LAYER DESIGN ENGINE ────────────────────────────
-const cssStyles = `
-  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap');
-
-  .cat-root {
-    font-family: 'Space Grotesk', sans-serif;
-    background: #050508;
-    min-height: 100vh;
-    width: 100%;
-    color: #ffffff;
-  }
-
-  .cat-noise {
-    position: absolute;
-    inset: 0;
-    opacity: 0.015;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3e%3cfilter id='noiseFilter'%3e%3cfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3e%3c/filter%3e%3crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3e%3c/svg%3e");
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .cat-container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 48px;
-    position: relative;
-    z-index: 2;
-  }
-
-  @media (max-width: 768px) {
-    .cat-container { padding: 0 24px; }
-  }
-
-  .cat-title {
-    font-family: 'Bebas Neue', sans-serif;
-    line-height: 0.85;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
-  }
-
-  .cat-back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    margin-bottom: 40px;
-    text-decoration: none;
-  }
-  .cat-back-btn:hover {
-    color: #a78bfa;
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  .subgroup-header {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(32px, 4vw, 56px);
-    letter-spacing: 0.02em;
-    color: #ffffff;
-    text-transform: uppercase;
-    border-left: 3px solid #a78bfa;
-    padding-left: 16px;
-    margin-bottom: 32px;
-    text-align: left;
-  }
-
-  .premium-img-card {
-    position: relative;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(20, 20, 25, 0.5);
-    overflow: hidden;
-    aspect-ratio: 16 / 9;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .premium-img-card:hover {
-    transform: translate3d(0, -6px, 0) scale(1.01);
-    border-color: rgba(167, 139, 250, 0.4);
-    box-shadow: 0 25px 50px rgba(147, 51, 234, 0.15);
-  }
-
-  .card-img-element {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .premium-img-card:hover .card-img-element {
-    transform: scale(1.05);
-  }
-
-  .card-shine-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 3;
-    pointer-events: none;
-    opacity: 0;
-    background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.15) 50%, transparent 70%);
-    transform: translate3d(-100%, 0, 0);
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
-  }
-  .premium-img-card:hover .card-shine-overlay {
-    opacity: 1;
-    transform: translate3d(100%, 0, 0);
-  }
-
-  .card-info-shelf {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(0deg, #09090c 0%, rgba(9,9,12,0.4) 50%, transparent 100%);
-    display: flex;
-    align-items: flex-end;
-    padding: 24px;
-    z-index: 2;
-    opacity: 0.9;
-    transition: opacity 0.4s ease;
-  }
-  .premium-img-card:hover .card-info-shelf {
-    opacity: 1;
-  }
-`;
-
 export default function CategoryPage({ params }: Props) {
-  // In Client Components, we unwrap async params using React.use()
   const resolvedParams = use(params);
   const categorySlug = resolvedParams.category;
   
@@ -156,101 +25,148 @@ export default function CategoryPage({ params }: Props) {
   }
 
   const currentCategoryWorks = works.filter((w) => w.category === categorySlug);
-
-  // Group works under unique games/subheadings
-  const groupedWorks: { [key: string]: Work[] } = {};
-  currentCategoryWorks.forEach((work) => {
-    if (!groupedWorks[work.gameOrSub]) {
-      groupedWorks[work.gameOrSub] = [];
-    }
-    groupedWorks[work.gameOrSub].push(work);
-  });
+  const isPortraitCategory = categorySlug === 'insta-covers';
 
   return (
-    <>
-      <style dangerouslySetInnerHTML={{ __html: cssStyles }} />
+    <div className="min-h-screen bg-[#030305] text-white relative selection:bg-purple-500/30 overflow-x-hidden">
+      {/* Background aesthetic noise & underglow */}
+      <div 
+        className="absolute inset-0 opacity-[0.012] mix-blend-overlay pointer-events-none z-1" 
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3e%3cfilter id='noise'%3e%3cfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3e%3c/filter%3e%3crect width='100%25' height='100%25' filter='url(%23noise)'/%3e%3c/svg%3e")`
+        }}
+      />
+      <div className="absolute top-0 left-0 w-[1000px] h-[1000px] rounded-full bg-purple-600/[0.015] blur-[200px] pointer-events-none z-0" />
       
       <Navbar />
 
-      <div className="cat-root relative">
-        <div className="cat-noise" />
-        <div className="absolute top-0 left-0 w-[700px] h-[700px] rounded-full bg-purple-600/[0.03] blur-[150px] pointer-events-none z-0" />
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 relative z-10">
+        
+        {/* Premium Large Header Block with Increased Spacing */}
+        <header className="pt-44 md:pt-52 pb-16 border-b border-white/[0.03] mb-16">
+          
+          {/* Attatractive, Premium High-End Return Button */}
+          <div className="mb-20">
+  <Link
+    href="/#showcase"
+    className="group relative inline-flex items-center gap-6 overflow-hidden rounded-full border border-white/[0.06] bg-gradient-to-b from-white/[0.04] to-white/[0.01] px-8 py-5 backdrop-blur-2xl transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-purple-500/40 hover:shadow-[0_20px_50px_rgba(147,51,234,0.15),inset_0_1px_20px_rgba(255,255,255,0.05)] will-change-transform"
+  >
+    {/* Ambient Interactive Background Radial Aura */}
+    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none">
+      <div className="absolute -inset-10 bg-[radial-gradient(circle_at_left,rgba(139,92,246,0.15),transparent_45%)]" />
+      <div className="absolute -inset-10 bg-[radial-gradient(circle_at_right,rgba(168,85,247,0.05),transparent_40%)]" />
+    </div>
 
-        <header className="relative pt-44 md:pt-52 pb-16">
-          <div className="cat-container">
-            <Link href="/#showcase" className="cat-back-btn">
-              <span>←</span> Return to Hub
-            </Link>
+    {/* Luxury Premium Diagonal Shimmer Layer */}
+    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+      <div className="w-full h-full bg-gradient-to-r from-transparent via-white/[0.08] to-transparent -translate-x-full group-hover:translate-x-full duration-1000 ease-out transition-transform" />
+    </div>
 
-            <p className="uppercase tracking-[0.4em] text-[10px] sm:text-xs font-bold text-purple-400/80 mb-4">
-              Creative Segment Database
-            </p>
+    {/* Left Icon: Elevated Glass Arrow Badge */}
+    <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.02] shadow-[inner_0_1px_2px_rgba(255,255,255,0.1)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-x-1 group-hover:border-purple-500/30 group-hover:bg-purple-500/10 group-hover:shadow-[0_0_15px_rgba(147,51,234,0.2)]">
+      <span className="text-base font-light text-white/80 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-x-0.5">
+        ←
+      </span>
+    </div>
 
-            <h1 className="cat-title font-black text-[56px] sm:text-[88px] lg:text-[140px] tracking-tight text-left">
-              {category.title}
-            </h1>
+    {/* High-End Typography Hub Stack */}
+    <div className="relative z-10 flex flex-col items-start gap-0.5">
+      <span
+        className="text-[9px] font-black uppercase text-purple-400/70 tracking-[0.45em] transition-colors duration-500 group-hover:text-purple-300"
+        style={{
+          fontFamily: "'Space Grotesk', sans-serif",
+        }}
+      >
+        Navigation Node
+      </span>
 
-            <p className="mt-6 max-w-2xl text-zinc-400 text-sm sm:text-base md:text-lg leading-relaxed text-left">
-              {category.description}
-            </p>
-          </div>
+      <span
+        className="text-base font-bold tracking-tight text-white/85 transition-colors duration-500 group-hover:text-white"
+        style={{
+          fontFamily: "'Space Grotesk', sans-serif",
+        }}
+      >
+        Return to Showcase
+      </span>
+    </div>
+
+    {/* Right Icon: Slide Indicator Arrow */}
+    <span className="relative z-10 ml-4 text-lg font-light text-white/20 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1.5 group-hover:text-purple-400/80">
+      
+    </span>
+  </Link>
+</div>
+<div className="h-2"></div>
+
+          <p className="uppercase tracking-[0.5em] text-[11px] font-black text-purple-400/80 mb-5">
+            Creative Segment Database
+          </p>
+
+          {/* Expanded Massive Screen-Shaking Typography */}
+          <h1 className="font-black text-6xl sm:text-8xl lg:text-9xl tracking-tighter uppercase leading-[0.85] font-sans text-left">
+            {category.title}
+          </h1>
+
+          <p className="mt-8 max-w-2xl text-zinc-400 text-sm sm:text-base leading-relaxed text-left opacity-90">
+            {category.description}
+          </p>
+          <div className="h-2"></div>
         </header>
 
+        {/* Dense Premium Grid Layout */}
         <main className="pb-40">
-          <div className="cat-container">
-            {Object.keys(groupedWorks).length > 0 ? (
-              Object.keys(groupedWorks).map((subGroupTitle) => (
-                <div key={subGroupTitle} className="mb-20 w-full">
+          {currentCategoryWorks.length > 0 ? (
+            <div 
+              className={`grid gap-3 w-full justify-start ${
+                isPortraitCategory 
+                  ? "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5" 
+                  : "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+              }`}
+            >
+              {currentCategoryWorks.map((work) => (
+                <div 
+                  key={work.id} 
+                  className={`group relative w-full bg-[#07070a] border border-white/[0.05] rounded-lg overflow-hidden shadow-md transition-all duration-500 cubic-bezier(0.25, 1, 0.2, 1) hover:-translate-y-2 hover:border-purple-500/60 hover:shadow-[0_12px_24px_rgba(0,0,0,0.8),0_0_20px_rgba(139,92,246,0.28)] will-change-transform ${
+                    isPortraitCategory 
+                      ? "aspect-[9/16] max-w-[240px]" 
+                      : "aspect-[16/9] max-w-[340px]"
+                  }`}
+                  title={work.title}
+                >
+                  {/* Lightning sweep hover effect */}
+                  <div className="absolute inset-0 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-transparent via-white/[0.22] to-transparent -translate-x-full group-hover:translate-x-full duration-700 ease-out" style={{ transitionProperty: 'transform' }} />
                   
-                  <h2 className="subgroup-header">{subGroupTitle}</h2>
+                  {/* Anchoring vignette layer */}
+                  <div className="absolute inset-0 z-10 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_55%,rgba(0,0,0,0.45)_100%)]" />
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-                    {groupedWorks[subGroupTitle].map((work) => (
-                      <div key={work.id} className="premium-img-card group">
-                        
-                        <div className="card-shine-overlay" />
-
-                        <img
-                          src={work.image}
-                          alt={`${work.title} preview`}
-                          className="card-img-element"
-                          onError={(e) => {
-                            // Safely handles the fallback template if the image returns a 404 error
-                            e.currentTarget.onerror = null; 
-                            e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 16 9'%3E%3Crect width='100%25' height='100%25' fill='%230f0f14'/%3E%3C/svg%3E";
-                          }}
-                        />
-
-                        <div className="card-info-shelf text-left">
-                          <div className="w-full flex flex-col gap-1">
-                            <h3 className="text-base sm:text-lg font-bold tracking-tight text-white leading-tight">
-                              {work.title}
-                            </h3>
-                            <span className="text-[10px] font-bold tracking-widest text-purple-400 uppercase">
-                              Production Asset Pack
-                            </span>
-                          </div>
-                        </div>
-
-                      </div>
-                    ))}
-                  </div>
-
+                  <img
+                    src={work.image}
+                    alt={work.title}
+                    className="w-full h-full object-cover object-center transform scale-100 group-hover:scale-[1.025] transition-transform duration-500 ease-out"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null; 
+                      e.currentTarget.src = isPortraitCategory 
+                        ? "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='16'%3E%3Crect width='100%25' height='100%25' fill='%2307070a'/%3E%3C/svg%3E"
+                        : "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='9'%3E%3Crect width='100%25' height='100%25' fill='%2307070a'/%3E%3C/svg%3E";
+                    }}
+                  />
                 </div>
-              ))
-            ) : (
-              <div className="text-left py-20 border-l border-white/10 pl-8 max-w-xl">
-                <h2 className="text-xl font-bold tracking-tight text-zinc-400">No logs categorized</h2>
-                <p className="mt-2 text-sm text-zinc-600 leading-relaxed">
-                  There are currently no active production entries linked to this tracking node.
-                </p>
-              </div>
-            )}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="py-20 border-l border-white/10 pl-8 max-w-xl text-left">
+              <h2 className="text-xl font-bold tracking-tight text-zinc-500">No logs categorized</h2>
+              <p className="mt-2 text-sm text-zinc-600 leading-relaxed">
+                There are currently no active production entries linked to this tracking node.
+              </p>
+            </div>
+          )}
         </main>
 
-        <Footer />
       </div>
-    </>
+
+      <Footer />
+    </div>
   );
 }

@@ -25,8 +25,8 @@ export const categories: Category[] = [
     gradient: "from-orange-500 via-pink-500 to-red-500",
   },
   {
-    slug: "facts",
-    title: "Facts",
+    slug: "documentary",
+    title: "Documentary",
     description: "Educational channels and documentaries.",
     count: 35,
     icon: "🧠",
