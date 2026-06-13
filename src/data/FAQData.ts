@@ -23,6 +23,6 @@ export const faqData: FAQType[] = [
   {
     id: 4,
     question: "What software do you use?",
-    answer: "Photoshop, Illustrator, After Effects, Premiere Pro, and Figma form the core structural stack for all conceptualization work."
+    answer: "Photoshop, Illustrator, Magnific, and ChatGPT form the core structural stack for all conceptualization work."
   }
 ];

@@ -1,11 +1,4 @@
 
-
-
-
-
-
-
-
 export default function AboutPhilosophy() {
   return (
     <div className="relative">
