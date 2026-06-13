@@ -13,28 +13,28 @@ type LabCard = {
 
 const cards: LabCard[] = [
   {
-    title: "Typography Exploration",
-    before: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80",
-    after: "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?w=600&auto=format&fit=crop&q=80",
-    tag: "Letters & Rhythm",
+    title: "Documentary Transformation",
+    before: "/images/BeforeAfter/documentary-before.png",
+    after: "/images/BeforeAfter/documentary-after.png",
+    tag: "Storytelling",
   },
   {
-    title: "Color Exploration",
-    before: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=80",
-    after: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600&auto=format&fit=crop&q=80",
-    tag: "Mood Testing",
+    title: "Cinematic Transformation",
+    before: "/images/BeforeAfter/filmy-before-1.png",
+    after: "/images/BeforeAfter/filmy-after-1.png",
+    tag: "Entertainment",
   },
   {
-    title: "Logo Concept",
-    before: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80",
-    after: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=600&auto=format&fit=crop&q=80",
-    tag: "Unused Direction",
+    title: "Gaming Transformation",
+    before: "/images/BeforeAfter/gaming-before-1.png",
+    after: "/images/BeforeAfter/gaming-after-1.png",
+    tag: "Engagement",
   },
   {
-    title: "Creative Experiment",
-    before: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=600&auto=format&fit=crop&q=80",
-    after: "https://images.unsplash.com/photo-1604871000636-074fa5117945?w=600&auto=format&fit=crop&q=80",
-    tag: "Visual Playground",
+    title: "Podcast Transformation",
+    before: "/images/BeforeAfter/podcast-before.png",
+    after: "/images/BeforeAfter/podcast-after.png",
+    tag: "Personal Branding",
   },
 ];
 
@@ -134,9 +134,9 @@ const css = `
 
   .cl-card-space {
     position: relative;
-    height: 460px;
-    perspective: 2000px;
     width: 100%;
+    padding-top: 56.25%;
+    perspective: 2000px;
   }
 
   .cl-paper-backlayer {
@@ -144,7 +144,7 @@ const css = `
     inset: 12px -4px -4px 12px;
     background: rgba(20, 20, 25, 0.45);
     border: 1px solid rgba(255, 255, 255, 0.01);
-    border-radius: 32px 76px 32px 32px;
+    border-radius: 20px;
     transform: rotate(-1.5deg);
     z-index: 1;
     pointer-events: none;
@@ -156,15 +156,14 @@ const css = `
   }
 
   .cl-flipper {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    inset: 0;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
     transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 2;
   }
-  
+
   .cl-flipper--flipped {
     transform: rotateY(180deg);
   }
@@ -174,7 +173,7 @@ const css = `
     inset: 0;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    border-radius: 32px 76px 32px 32px;
+    border-radius: 20px;
     overflow: hidden;
   }
 
@@ -188,28 +187,11 @@ const css = `
     height: 100%;
     background: var(--lab-surface);
     border: 1px solid var(--lab-border);
-    border-radius: 32px 76px 32px 32px;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
   }
 
-  .cl-paper-main::after {
-    content: '';
-    position: absolute;
-    top: -1px;
-    right: -1px;
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, transparent 50%, #050507 50%),
-                linear-gradient(225deg, transparent 50%, rgba(255,255,255,0.04) 50%);
-    border-left: 1px solid var(--lab-border);
-    border-bottom: 1px solid var(--lab-border);
-    border-bottom-left-radius: 24px;
-    pointer-events: none;
-    z-index: 5;
-  }
-
-  /* FIXED HIGH-FIDELITY PUSH PIN DESIGN MODULE ENGINE */
   .cl-pin-container {
     position: absolute;
     top: -12px;
@@ -228,21 +210,19 @@ const css = `
     transform: translateX(-50%) translateY(-2px) rotate(6deg);
   }
 
-  /* Translucent polymer acrylic head with radial specular reflection highlights */
   .cl-pin-head {
     width: 20px;
     height: 16px;
     background: radial-gradient(circle at 35% 35%, rgba(244, 63, 94, 0.95) 0%, rgba(190, 18, 60, 0.95) 70%, rgba(159, 18, 57, 1) 100%);
     border-radius: 6px 6px 4px 4px;
     border: 1px solid rgba(255, 255, 255, 0.25);
-    box-shadow: 
+    box-shadow:
       inset 0 3px 5px rgba(255, 255, 255, 0.4),
       inset 0 -2px 4px rgba(0, 0, 0, 0.5);
     position: relative;
     z-index: 3;
   }
 
-  /* Fluid molded center ergonomic grip block */
   .cl-pin-grip {
     width: 14px;
     height: 10px;
@@ -254,7 +234,6 @@ const css = `
     z-index: 2;
   }
 
-  /* Thick base flange containing internal visual core compression details */
   .cl-pin-base {
     width: 26px;
     height: 6px;
@@ -266,7 +245,6 @@ const css = `
     z-index: 3;
   }
 
-  /* Chrome specular chrome steel logic needle shaft */
   .cl-pin-needle {
     width: 2.5px;
     height: 20px;
@@ -278,7 +256,6 @@ const css = `
     position: relative;
   }
 
-  /* Adaptive skeuomorphic soft blurred ambient pin depth casting map shadow */
   .cl-pin-shadow {
     position: absolute;
     width: 28px;
@@ -296,46 +273,37 @@ const css = `
     opacity: 0.8;
   }
 
-  .cl-reveal-overlay {
+  .cl-label-badge {
     position: absolute;
-    inset: 0;
-    background: rgba(5, 5, 7, 0.45);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 3;
-    transition: background 0.4s ease;
-  }
-  .cl-card-space:hover .cl-reveal-overlay {
-    background: rgba(5, 5, 7, 0.35);
-  }
-
-  .cl-reveal-pill {
-    background: rgba(255, 255, 255, 0.06);
+    bottom: 16px;
+    left: 16px;
+    z-index: 4;
+    background: rgba(0, 0, 0, 0.55);
     border: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 10px 22px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 6px 14px;
     border-radius: 100px;
     font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #ffffff;
-    box-shadow: 0 12px 24px -6px rgba(0,0,0,0.6);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+    color: rgba(255, 255, 255, 0.7);
   }
-  .cl-card-space:hover .cl-reveal-pill {
-    transform: scale(1.04) translateY(-1px);
-    background: rgba(255, 255, 255, 0.1);
+
+  .cl-hint {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    z-index: 4;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.3s ease;
   }
-  .cl-reveal-arrow {
-    font-size: 12px;
-    color: var(--lab-muted);
-    margin-top: 12px;
-    letter-spacing: 0.05em;
-    font-weight: 500;
+  .cl-card-space:hover .cl-hint {
+    color: rgba(255, 255, 255, 0.75);
   }
 `;
 
@@ -357,12 +325,12 @@ export default function CreativeLab() {
         <div className="cl-orb" />
 
         <section className="cl-section">
-          
+
           <div className="cl-head">
-            <p className="cl-head__eyebrow">Creative Lab</p>
-            <h2 className="cl-head__title">Designer&apos;s Playground</h2>
+            <p className="cl-head__eyebrow">Before & After</p>
+            <h2 className="cl-head__title">Design Transformations</h2>
             <p className="cl-head__sub">
-              Unused concepts, visual explorations, color studies and creative experiments that shaped the final work.
+              A look behind the scenes at how raw concepts evolve into polished, high-impact designs.
             </p>
           </div>
 
@@ -382,6 +350,7 @@ export default function CreativeLab() {
                   key={`lab-card-space-${index}`}
                   className={`cl-card-space ${dynamicRotations[index]}`}
                   onClick={() => toggleCard(index)}
+                  style={{ cursor: "pointer" }}
                 >
                   <div className="cl-paper-backlayer" />
 
@@ -395,54 +364,52 @@ export default function CreativeLab() {
                   </div>
 
                   <div className={`cl-flipper ${isOpen ? "cl-flipper--flipped" : ""}`}>
-                    
-                    {/* FRONT SHEET VIEWPORT LAYER */}
+
+                    {/* FRONT — BEFORE image */}
                     <div className="cl-face cl-face--front">
                       <div className="cl-paper-main">
                         <Image
                           src={card.before}
-                          alt={`${card.title} draft preview canvas`}
+                          alt={`${card.title} — before`}
                           fill
                           sizes="(max-width: 768px) 100vw, 600px"
-                          className="object-cover filter grayscale contrast-125 brightness-[0.7]"
+                          className="object-cover"
                           priority={index <= 1}
                         />
-
-                        <div className="cl-reveal-overlay">
-                          <span className="cl-reveal-pill">Tap To Reveal</span>
-                          <span className="cl-reveal-arrow">Final Result →</span>
-                        </div>
+                        <div className="cl-label-badge">Before</div>
+                        <div className="cl-hint">Tap to reveal →</div>
                       </div>
                     </div>
 
-                    {/* BACK SHEET VIEWPORT LAYER */}
+                    {/* BACK — AFTER image */}
                     <div className="cl-face cl-face--back">
                       <div className="cl-paper-main">
                         <Image
                           src={card.after}
-                          alt={`${card.title} finalized execution result`}
+                          alt={`${card.title} — after`}
                           fill
                           sizes="(max-width: 768px) 100vw, 600px"
                           className="object-cover"
                         />
-                        
+
                         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent z-10" />
 
-                        {/* Text Metadata Details */}
-                        <div className="absolute bottom-8 left-8 z-20 pr-14">
-                          <p 
+                        <div className="absolute bottom-5 left-5 z-20 pr-10">
+                          <p
                             className="text-purple-400 text-xs font-bold uppercase tracking-[0.2em]"
                             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                           >
                             {card.tag}
                           </p>
-                          <h3 
-                            className="text-white text-2xl sm:text-3xl font-bold mt-1.5 tracking-tight"
+                          <h3
+                            className="text-white text-xl sm:text-2xl font-bold mt-1 tracking-tight"
                             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                           >
                             {card.title}
                           </h3>
                         </div>
+
+                        <div className="cl-label-badge" style={{ bottom: "auto", top: 16 }}>After</div>
                       </div>
                     </div>
 
