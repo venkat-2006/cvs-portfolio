@@ -19,7 +19,7 @@ export default function Navbar() {
 
   const navLinks = [
     { label: "Work", id: "#showcase" },
-    { label: "Services", id: "#services" },
+   
     { label: "Reviews", id: "#testimonials" },
     { label: "Lab", id: "#creative-lab" },
     { label: "FAQ", id: "#faq" },

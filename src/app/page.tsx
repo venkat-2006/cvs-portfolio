@@ -30,11 +30,9 @@ export default function Home() {
         </div>
 
         <Categories />
+        <div  className="h-[40px]"></div>
 
-        {/* Anchor: Services Offerings */}
-        <div id="services">
-          <Services />
-        </div>
+       
 
         <About />
 

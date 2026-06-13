@@ -316,8 +316,8 @@ export default function AboutCTA() {
           {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 w-full gap-10 sm:gap-4">
             {[
-              { value: "3+",   label: "Years Experience"   },
-              { value: "40+",  label: "Projects Delivered" },
+              { value: "2+",   label: "Years Experience"   },
+              { value: "500+",  label: "Projects Delivered" },
               { value: "100%", label: "Passion Driven"     },
             ].map((item, i) => (
               <div

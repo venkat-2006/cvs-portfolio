@@ -1,7 +1,7 @@
 const stats = [
-  { value: "100+", label: "Projects Completed", sub: "Across all categories" },
-  { value: "20+", label: "Happy Clients", sub: "Worldwide" },
-  { value: "3+", label: "Years Active", sub: "Since 2022" },
+  { value: "500+", label: "Projects Completed", sub: "Across all categories" },
+  { value: "40+", label: "Happy Clients", sub: "Worldwide" },
+  { value: "2+", label: "Years Active", sub: "Since 2022" },
   { value: "∞", label: "Creative Drive", sub: "Never Stops" },
 ];
 

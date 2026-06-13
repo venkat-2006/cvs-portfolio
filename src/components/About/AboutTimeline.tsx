@@ -1,27 +1,27 @@
 const timeline = [
   {
-    year: "2022",
-    title: "Started Design",
-    description:
-      "Began exploring Photoshop through gaming content, creating thumbnails, posters and social media graphics. What started as curiosity quickly turned into a genuine passion for visual storytelling.",
-  },
-  {
     year: "2023",
-    title: "Freelancing Journey",
+    title: "Creative Foundations",
     description:
-      "Secured first freelance opportunities and collaborated with gaming creators and emerging brands. Developed a recognizable visual style while learning client communication and project delivery.",
+      "Began exploring digital design through gaming and content creation, developing expertise in thumbnails, posters, and social media visuals while building a strong foundation in visual communication.",
   },
   {
     year: "2024",
-    title: "Scaling Up",
+    title: "Professional Breakthrough",
     description:
-      "Expanded into branding, esports, content marketing and social media design. Worked across multiple niches and delivered high-impact creative assets for a growing client base.",
+      "Started working with clients and transforming creative skills into professional services. Delivered high-quality visual assets for creators and brands while gaining valuable real-world project experience.",
   },
   {
     year: "2025",
-    title: "Building The Future",
+    title: "Growth & Specialization",
     description:
-      "Crossed 100+ completed projects and launched a professional portfolio focused on attracting larger collaborations, stronger brands and more ambitious creative challenges.",
+      "Expanded into branding, esports, marketing creatives, and content-focused design. Refined workflows, elevated design quality, and successfully managed projects across multiple industries and audiences.",
+  },
+  {
+    year: "2026",
+    title: "Proven Impact",
+    description:
+      "Successfully delivered 500+ projects for 40+ clients across various niches. With over 2 years of design experience, I continue helping brands, businesses, and creators build memorable visual identities and achieve stronger digital presence.",
   },
 ];
 
@@ -32,11 +32,11 @@ function TimelineCard({
 }) {
   return (
     <div
-      className="group relative overflow-hidden rounded-[32px] border border-white/[0.07] transition-all duration-500 hover:-translate-y-2 hover:border-white/[0.15]"
+      className="group relative overflow-hidden rounded-[28px] border border-white/[0.07] transition-all duration-500 hover:-translate-y-2 hover:border-white/[0.15]"
       style={{ isolation: "isolate" }}
     >
       <div
-        className="absolute inset-0 rounded-[32px]"
+        className="absolute inset-0 rounded-[28px]"
         style={{ background: "linear-gradient(160deg, rgba(16,16,16,0.98) 0%, rgba(7,7,7,0.98) 100%)" }}
       />
       <div
@@ -63,7 +63,7 @@ function TimelineCard({
         style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.55) 0%, transparent 60%)" }}
       />
       <div
-        className="absolute inset-0 rounded-[32px] pointer-events-none"
+        className="absolute inset-0 rounded-[28px] pointer-events-none"
         style={{
           boxShadow: [
             "inset 0 1.5px 0 rgba(255,255,255,0.10)",
@@ -74,16 +74,16 @@ function TimelineCard({
         }}
       />
       <div
-        className="absolute inset-0 rounded-[32px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        className="absolute inset-0 rounded-[28px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{ boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.12)" }}
       />
 
-      <div className="relative z-10 flex flex-col justify-center items-center text-center min-h-[240px] sm:min-h-[260px] lg:min-h-[320px] px-8 py-10 lg:px-10 lg:py-12">
+      <div className="relative z-10 flex flex-col justify-center items-center text-center min-h-[220px] sm:min-h-[260px] lg:min-h-[320px] px-6 py-8 lg:px-10 lg:py-12">
         <h4
-          className="text-white/92 group-hover:text-white transition-colors duration-300 mb-6"
+          className="text-white/90 group-hover:text-white transition-colors duration-300 mb-4 sm:mb-6"
           style={{
             fontFamily: "'Bebas Neue', sans-serif",
-            fontSize: "clamp(44px, 3.4vw, 64px)",
+            fontSize: "clamp(36px, 9vw, 64px)",
             lineHeight: 0.92,
             letterSpacing: "0.03em",
           }}
@@ -91,7 +91,7 @@ function TimelineCard({
           {item.title}
         </h4>
         <p
-          className="max-w-[360px] text-[15px] lg:text-[17px] leading-8 text-white/45 group-hover:text-white/65 transition-colors duration-300"
+          className="max-w-[340px] text-[13px] sm:text-[15px] lg:text-[17px] leading-7 lg:leading-8 text-white/45 group-hover:text-white/65 transition-colors duration-300"
           style={{ fontFamily: "'DM Sans', sans-serif" }}
         >
           {item.description}
@@ -105,7 +105,7 @@ export default function AboutTimeline() {
   return (
     <div>
       {/* Header */}
-      <div className="mb-24">
+      <div className="mb-16 sm:mb-20 lg:mb-24 px-1 sm:px-0">
         <p
           className="text-[11px] font-semibold uppercase text-white/35 mb-4"
           style={{ letterSpacing: "0.35em", fontFamily: "'DM Sans', sans-serif" }}
@@ -116,11 +116,14 @@ export default function AboutTimeline() {
           className="text-white/85 leading-none"
           style={{
             fontFamily: "'Bebas Neue', sans-serif",
-            fontSize: "clamp(54px, 7vw, 90px)",
+            fontSize: "clamp(48px, 7vw, 90px)",
             letterSpacing: "0.02em",
           }}
         >
-          How I Got Here
+          How I Got{" "}
+          <span style={{ WebkitTextStroke: "1px rgba(255,255,255,0.4)", color: "transparent" }}>
+            Here
+          </span>
         </h3>
       </div>
 
@@ -128,7 +131,7 @@ export default function AboutTimeline() {
       <div className="lg:hidden">
         <div className="relative">
 
-          {/* Vertical line — thicker and brighter */}
+          {/* Vertical line */}
           <div
             className="absolute top-0 bottom-0 w-[2px] pointer-events-none"
             style={{
@@ -139,21 +142,18 @@ export default function AboutTimeline() {
 
           <div className="flex flex-col gap-0">
             {timeline.map((item, index) => (
-              <div key={item.year} className="relative flex gap-7">
+              <div key={item.year} className="relative flex gap-5 sm:gap-7">
 
-                {/* Left column: dot only, centered on the line */}
+                {/* Left column: dot */}
                 <div
                   className="relative shrink-0 flex flex-col items-center"
                   style={{ width: "40px" }}
                 >
-                  {/* Dot — vertically aligned with year label */}
                   <div className="relative mt-[22px]">
-                    {/* Outer glow ring */}
                     <div
                       className="absolute inset-0 rounded-full scale-[3.5] blur-md pointer-events-none"
                       style={{ background: "rgba(255,255,255,0.07)" }}
                     />
-                    {/* Inner dot */}
                     <div
                       className="relative w-[16px] h-[16px] rounded-full border-2 border-white/35 bg-[#080808]"
                       style={{ boxShadow: "0 0 16px rgba(255,255,255,0.18), 0 0 0 3px rgba(255,255,255,0.04)" }}
@@ -161,8 +161,8 @@ export default function AboutTimeline() {
                   </div>
                 </div>
 
-                {/* Right column: year row + card + spacer */}
-                <div className="flex-1 flex flex-col pb-10">
+                {/* Right column */}
+                <div className="flex-1 flex flex-col pb-8 pr-4 min-w-0">
 
                   {/* Year row */}
                   <div className="flex items-center gap-3 h-[60px]">
@@ -189,22 +189,16 @@ export default function AboutTimeline() {
                         Now
                       </span>
                     )}
-
-                    {/* Horizontal tick line from dot area into year */}
-                    <div
-                      className="hidden sm:block flex-1 h-px ml-1"
-                      style={{ background: "linear-gradient(to right, rgba(255,255,255,0.10), transparent)" }}
-                    />
                   </div>
 
-                  {/* Card */}
-                  <TimelineCard item={item} />
+                  {/* Card — constrained width */}
+                  <div className="w-full max-w-[420px]">
+                    <TimelineCard item={item} />
+                  </div>
 
-                  {/* Spacer between card bottom and next year row — this is where the line shows */}
                   {index < timeline.length - 1 && (
-                    <div className="h-12" />
+                    <div className="h-10" />
                   )}
-
                 </div>
               </div>
             ))}

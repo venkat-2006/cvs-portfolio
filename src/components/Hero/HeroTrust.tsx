@@ -15,11 +15,11 @@ export default function HeroTrust() {
       sm:gap-8
       "
     >
-      <span>100+ Projects</span>
+      <span>500+ Projects</span>
       <span className="hidden sm:block text-gray-600">|</span>
-      <span>20+ Clients</span>
+      <span>40+ Clients</span>
       <span className="hidden sm:block text-gray-600">|</span>
-      <span>3+ Years Experience</span>
+      <span>2+ Years Experience</span>
     </div>
   );
 }
