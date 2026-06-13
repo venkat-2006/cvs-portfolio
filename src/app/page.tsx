@@ -36,12 +36,12 @@ export default function Home() {
 
         <About />
 
-        {/* Anchor: Client Reviews */}
-        <div id="testimonials">
+       
+        {/* <div id="testimonials">
           <Testimonials />
-        </div>
+        </div> */}
 
-        <FeaturedClients />
+        {/* <FeaturedClients /> */}
 
         {/* Anchor: Creative Playgrounds Lab */}
         <div id="creative-lab">

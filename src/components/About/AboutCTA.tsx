@@ -215,7 +215,7 @@ export default function AboutCTA() {
             </a>
 
             <a
-              href="mailto:hello@cvsgfx.com"
+              href="mailto:cvsworks69@gmail.com"
               className="flex items-center justify-center w-full px-6 sm:px-10 py-4 sm:py-5 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:bg-white/[0.08] hover:text-white"
               style={{
                 borderRadius: "16px",
@@ -240,7 +240,7 @@ export default function AboutCTA() {
           {/* Contact Meta Grid — Clean presentation alignment */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-18 mb-16 w-full">
             {[
-              { label: "Email", value: "hello@cvsgfx.com", isStatus: false, href: "mailto:hello@cvsgfx.com" },
+              { label: "Email", value: "cvsworks69@gmail.com", isStatus: false, href: "mailto:cvsworks69@gmail.com" },
               { label: "Based In", value: "India", isStatus: false },
               { label: "Status", value: "Open to work", isStatus: true },
             ].map((item) => {
