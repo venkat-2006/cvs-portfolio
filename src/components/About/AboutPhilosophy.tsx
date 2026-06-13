@@ -1,3 +1,7 @@
+
+
+
+
 export default function AboutPhilosophy() {
   return (
     <div className="relative">
@@ -19,7 +23,7 @@ export default function AboutPhilosophy() {
       </div>
 
       {/* Purple ambient glow */}
-      <div
+      <div   
         className="absolute top-0 left-0 pointer-events-none"
         style={{
           width: "700px",
