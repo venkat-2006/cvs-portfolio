@@ -6,9 +6,9 @@ export default function ScrollIndicator() {
       bottom-10
       left-1/2
       -translate-x-1/2
-
       text-gray-500
       text-sm
+      whitespace-nowrap
       "
     >
       Scroll To Explore ↓

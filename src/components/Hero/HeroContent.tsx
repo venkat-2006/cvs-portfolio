@@ -1,41 +1,34 @@
-import HeroBadge from "./Herobadge";
-
 export default function HeroContent() {
   return (
     <div className="space-y-6">
-      <HeroBadge />
-
       <h1
         className="
-        font-black
-        leading-[0.9]
-text-4xl
-sm:text-5xl
-md:text-6xl
-lg:text-7xl
-xl:text-8xl
-2xl:text-[110px]
+          font-extrabold
+          tracking-tight
+          leading-[0.88]
+          text-4xl
+          sm:text-5xl
+          md:text-6xl
+          lg:text-[72px]
+          xl:text-[84px]
+          2xl:text-[96px]
         "
       >
-        CREATING
+        Bold Visuals,
         <br />
-        VISUALS
-        <br />
-        THAT COMMAND
-        <br />
-        ATTENTION
+        Big Impact
       </h1>
-
+      <div className="h-[40px]"></div>
       <p
         className="
-        text-zinc-400
-        max-w-xl
-        text-base
-        md:text-lg
+          max-w-xl
+          text-zinc-400
+          text-base
+          md:text-lg
+          leading-relaxed
         "
       >
-        Helping brands stand out through premium graphic design,
-        branding, social media creatives and visual storytelling.
+       Helping content creators stand out with clickable YouTube thumbnails, engaging social media creatives, premium graphic design, and impactful visual storytelling.
       </p>
     </div>
   );

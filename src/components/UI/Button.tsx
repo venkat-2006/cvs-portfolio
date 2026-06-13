@@ -5,12 +5,11 @@ import { ArrowRight } from "lucide-react";
 
 type Props = {
   children: React.ReactNode;
-  href?: string; // Optional prop to support single-page smooth scrolling
+  href?: string;
   onClick?: () => void;
 };
 
 export default function Button({ children, href, onClick }: Props) {
-  // Shared premium Tailwind styling classes matrix
   const baseStyles = `
     group
     relative
@@ -19,32 +18,30 @@ export default function Button({ children, href, onClick }: Props) {
     items-center
     justify-center
     gap-4
-    min-w-[220px]
-    px-10
-    py-5
+    min-w-[180px]
+    h-[72px]
+    px-8
     rounded-full
-    bg-white/10
-    backdrop-blur-2xl
-    border
-    border-white/15
     text-white
     font-semibold
     text-base
     md:text-lg
-    shadow-[0_0_30px_rgba(255,255,255,0.05)]
-    hover:bg-white/15
-    hover:border-white/30
-    hover:scale-[1.02]
+    bg-purple-900
+    border
+    border-purple-700/50
+    shadow-[0_0_25px_rgba(88,28,135,0.5),0_0_50px_rgba(88,28,135,0.25),inset_0_0_20px_rgba(59,7,100,0.4)]
+    hover:bg-purple-800
+    hover:border-purple-600/50
+    hover:shadow-[0_0_35px_rgba(88,28,135,0.7),0_0_70px_rgba(88,28,135,0.35),inset_0_0_25px_rgba(59,7,100,0.3)]
+    hover:scale-[1.03]
     transition-all
     duration-300
     cursor-pointer
     select-none
   `;
 
-  // Internal component sub-elements (Shine ray + Content + Arrow Icon)
   const renderContent = () => (
     <>
-      {/* Shine Effect */}
       <span
         className="
         absolute
@@ -55,17 +52,13 @@ export default function Button({ children, href, onClick }: Props) {
         duration-1000
         bg-gradient-to-r
         from-transparent
-        via-white/20
+        via-white/10
         to-transparent
         "
       />
-
-      {/* Text */}
       <span className="relative z-10 whitespace-nowrap">
         {children}
       </span>
-
-      {/* Arrow */}
       <ArrowRight
         size={22}
         className="
@@ -79,7 +72,6 @@ export default function Button({ children, href, onClick }: Props) {
     </>
   );
 
-  // OPTION A: If an href string layout value is passed, render a valid semantic <a> anchor link
   if (href) {
     return (
       <a href={href} className={baseStyles}>
@@ -88,7 +80,6 @@ export default function Button({ children, href, onClick }: Props) {
     );
   }
 
-  // OPTION B: Fallback to a standard native operational button element form
   return (
     <button onClick={onClick} className={baseStyles}>
       {renderContent()}

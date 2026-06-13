@@ -7,19 +7,14 @@ export default function HeroVisual() {
     <div
       className="
       relative
-
       w-full
       aspect-square
       max-w-[280px]
       md:max-w-[420px]
       xl:max-w-[520px]
-
       mx-auto
-
-      mt-12
-      sm:mt-16
-      lg:mt-0
-
+      mt-8
+      lg:mt-16
       animate-float
       "
     >
@@ -28,14 +23,11 @@ export default function HeroVisual() {
         className="
         absolute
         inset-[-15%]
-
         rounded-full
-
         bg-gradient-to-br
         from-purple-600/30
         via-fuchsia-500/20
         to-blue-500/30
-
         blur-[120px]
         "
       />
@@ -45,18 +37,12 @@ export default function HeroVisual() {
         className="
         absolute
         inset-0
-
         rounded-full
-
         border
         border-white/10
-
         bg-white/5
-
         backdrop-blur-3xl
-
         shadow-[0_0_120px_rgba(168,85,247,0.25)]
-
         overflow-hidden
         "
       >
@@ -64,17 +50,12 @@ export default function HeroVisual() {
         <div
           className="
           absolute
-
           top-8
           left-10
-
           w-32
           h-32
-
           rounded-full
-
           bg-white/20
-
           blur-2xl
           "
         />
@@ -83,31 +64,23 @@ export default function HeroVisual() {
         <div
           className="
           absolute
-
           bottom-12
           right-12
-
           w-24
           h-24
-
           rounded-full
-
           bg-purple-400/20
-
           blur-xl
           "
         />
-        
+
         {/* Water Reflection Effect */}
         <div
           className="
           absolute
           inset-0
-
           opacity-30
-
           bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.35),transparent_40%),radial-gradient(circle_at_70%_70%,rgba(168,85,247,0.2),transparent_35%)]
-
           animate-pulse
           "
         />
@@ -117,7 +90,6 @@ export default function HeroVisual() {
           className="
           absolute
           inset-0
-
           flex
           items-center
           justify-center
@@ -125,11 +97,9 @@ export default function HeroVisual() {
         >
           <Image
             src="/images/logo.png"
-            alt="GVS"
+            alt="CVS"
             fill
-            /* Fixes the performance warning by matching your exact max-width breakpoints */
             sizes="(max-width: 768px) 280px, (max-width: 1280px) 420px, 520px"
-            /* Tells Next.js to preload this image immediately for better LCP performance */
             priority
             className="
               object-cover

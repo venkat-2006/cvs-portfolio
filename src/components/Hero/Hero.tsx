@@ -1,4 +1,5 @@
 import Container from "../Layout/Container";
+import HeroBadge from "./Herobadge";
 import HeroContent from "./HeroContent";
 import HeroActions from "./HeroActions";
 import HeroVisual from "./HeroVisual";
@@ -12,14 +13,13 @@ export default function Hero() {
       relative
       min-h-screen
       flex
-      items-center
+      items-start
       overflow-hidden
       bg-[#050505]
-      pt-12
+      pt-[190px]
       pb-20
       "
     >
-    
       {/* Background Glows */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-20 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[200px]" />
@@ -44,26 +44,33 @@ export default function Hero() {
           {/* Left Content */}
           <div
             className="
-            space-y-10
-            text-center
-            lg:text-left
             flex
             flex-col
             items-center
             lg:items-start
+            text-center
+            lg:text-left
             max-w-[700px]
             mx-auto
             lg:mx-0
+            gap-8
             "
           >
-             
+            <HeroBadge />
             <HeroContent />
             <HeroActions />
             <HeroTrust />
           </div>
 
           {/* Right Visual */}
-          <div className="flex justify-center">
+          <div
+            className="
+            flex
+            justify-center
+            lg:translate-y-12
+            xl:translate-y-16
+            "
+          >
             <HeroVisual />
           </div>
         </div>
