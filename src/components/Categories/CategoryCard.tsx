@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import type { Category } from "@/data/categories";
 
-// Extra extension interface parameter to accept layout tracking indices
 interface EnhancedCardProps extends Category {
   index: number;
 }
@@ -17,7 +16,6 @@ export default function CategoryCard({
   index,
 }: EnhancedCardProps) {
   
-  // Creates organic layout variations across grid structures
   const dynamicRotations = [
     "hover:rotate-1 hover:scale-[1.015]",
     "hover:-rotate-1 hover:scale-[1.015]",
@@ -146,7 +144,7 @@ export default function CategoryCard({
             sm:px-12
           "
         >
-          {/* Master Compressed Core Title Header */}
+          {/* Master Compressed Core Title Header — FIXED */}
           <h3
             className="
               text-white/80
@@ -158,10 +156,13 @@ export default function CategoryCard({
               ease-[cubic-bezier(0.16,1,0.3,1)]
               group-hover:text-white
               group-hover:scale-[1.02]
+              w-full
             "
             style={{
               fontFamily: "'Bebas Neue', sans-serif",
-              fontSize: "clamp(48px, 5.5vw, 76px)",
+              fontSize: "clamp(32px, 5.5vw, 76px)", // ← lowered min from 48px to 32px
+              wordBreak: "break-word",               // ← prevents overflow on long words
+              overflowWrap: "break-word",            // ← extra safety for all browsers
             }}
           >
             {title}

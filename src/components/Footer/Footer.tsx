@@ -433,7 +433,7 @@ export default function Footer() {
           {/* Signature Identity Summary Row Block */}
           <div className="ft-signature">
             <p className="ft-signature__copy">
-              &copy; 2026 Designer Name. All Rights Reserved.
+              &copy; 2026 CVS GFX. All Rights Reserved.
             </p>
             <p className="ft-signature__dev">
               Designed & Developed with Care
