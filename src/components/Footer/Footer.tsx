@@ -61,6 +61,22 @@ const cssFooter = `
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3e%3cfilter id='noiseFilter'%3e%3cfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3e%3c/filter%3e%3crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3e%3c/svg%3e");
     pointer-events: none;
   }
+    .ft-signature__dev {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.ft-signature__dev:hover {
+  color: #c084fc;
+  letter-spacing: 0.22em;
+  text-shadow: 0 0 20px rgba(192, 132, 252, 0.35);
+}
 
   .ft-section {
     width: 100%;
@@ -446,9 +462,15 @@ export default function Footer() {
             <p className="ft-signature__copy">
               &copy; 2026 CVS GFX. All Rights Reserved.
             </p>
-            <p className="ft-signature__dev">
-              Designed & Developed with Care
-            </p>
+            <a
+  href="https://github.com/venkat-2006"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="ft-signature__dev"
+  aria-label="Visit Venkat's GitHub"
+>
+  Designed & Developed by VENKAT
+</a>
           </div>
 
         </section>
