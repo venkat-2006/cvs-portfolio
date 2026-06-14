@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-// ─── TYPES & DATA STRUCTURES ────────────────────────────────────────────────
 type LabCard = {
   title: string;
   before: string;
@@ -38,7 +37,6 @@ const cards: LabCard[] = [
   },
 ];
 
-// ─── INTEGRATED DESIGN CSS STYLES ───────────────────────────────────────────
 const css = `
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap');
 
@@ -273,49 +271,117 @@ const css = `
     opacity: 0.8;
   }
 
+  /* ── PREMIUM LABEL BADGE ── */
   .cl-label-badge {
     position: absolute;
     bottom: 16px;
     left: 16px;
     z-index: 4;
-    background: rgba(0, 0, 0, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    padding: 6px 14px;
+    background: rgba(0, 0, 0, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 6px 16px;
     border-radius: 100px;
     font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
+    font-weight: 800;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.12);
   }
 
-  .cl-hint {
+  .cl-label-badge--after {
     position: absolute;
-    bottom: 16px;
-    right: 16px;
+    top: 16px;
+    left: 16px;
+    bottom: auto;
     z-index: 4;
+    background: rgba(88, 28, 135, 0.75);
+    border: 1px solid rgba(167, 139, 250, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 6px 16px;
+    border-radius: 100px;
     font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    color: rgba(255, 255, 255, 0.4);
-    transition: color 0.3s ease;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(216, 180, 254, 0.98);
+    box-shadow: 0 4px 16px rgba(88,28,135,0.4), inset 0 1px 0 rgba(255,255,255,0.12);
   }
-  .cl-card-space:hover .cl-hint {
-    color: rgba(255, 255, 255, 0.75);
-  }
+
+  /* ── PREMIUM TAP TO REVEAL BUTTON ── */
+  /* ── PREMIUM TAP TO REVEAL BUTTON ── */
+.cl-hint {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px 7px 10px;
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.78);          /* ← dark */
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+.cl-card-space:hover .cl-hint {
+  background: rgba(0, 0, 0, 0.88);          /* ← darker on hover */
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.1);
+  transform: translateY(-1px);
+}
+
+.cl-hint__icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);    /* ← dark icon bg */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.3s ease;
+}
+.cl-card-space:hover .cl-hint__icon {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.cl-hint__icon svg {
+  width: 11px;
+  height: 11px;
+  fill: rgba(255, 255, 255, 0.85);
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.cl-card-space:hover .cl-hint__icon svg {
+  transform: rotate(90deg);
+}
+
+.cl-hint__text {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);         /* ← white text */
+  font-family: 'Space Grotesk', sans-serif;
+  white-space: nowrap;
+}
 `;
 
 export default function CreativeLab() {
   const [openCards, setOpenCards] = useState<number[]>([]);
 
   const toggleCard = (index: number) => {
-    if (openCards.includes(index)) {
-      setOpenCards(openCards.filter((i) => i !== index));
-    } else {
-      setOpenCards([...openCards, index]);
-    }
+    setOpenCards((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
   };
 
   return (
@@ -354,7 +420,7 @@ export default function CreativeLab() {
                 >
                   <div className="cl-paper-backlayer" />
 
-                  {/* HIGH-FIDELITY PUSH PIN MODULE */}
+                  {/* PIN */}
                   <div className="cl-pin-container">
                     <div className="cl-pin-head" />
                     <div className="cl-pin-grip" />
@@ -365,7 +431,7 @@ export default function CreativeLab() {
 
                   <div className={`cl-flipper ${isOpen ? "cl-flipper--flipped" : ""}`}>
 
-                    {/* FRONT — BEFORE image */}
+                    {/* FRONT — BEFORE */}
                     <div className="cl-face cl-face--front">
                       <div className="cl-paper-main">
                         <Image
@@ -376,12 +442,28 @@ export default function CreativeLab() {
                           className="object-cover"
                           priority={index <= 1}
                         />
+
+                        {/* subtle bottom fade so badges sit cleanly */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none" />
+
+                        {/* BEFORE badge — high opacity white */}
                         <div className="cl-label-badge">Before</div>
-                        <div className="cl-hint">Tap to reveal →</div>
+
+                        {/* Premium tap to reveal */}
+                        <div className="cl-hint">
+                          <div className="cl-hint__icon">
+                            <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M6 1v10M1 6l5 5 5-5" strokeWidth="0" />
+                              {/* flip arrow icon */}
+                              <path d="M2 5.5C2 3.567 3.567 2 5.5 2h1M10 6.5C10 8.433 8.433 10 6.5 10h-1M8.5 1l1.5 1.5L8.5 4M3.5 11 2 9.5 3.5 8" stroke="rgba(216,180,254,0.95)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                            </svg>
+                          </div>
+                          <span className="cl-hint__text">Tap to reveal</span>
+                        </div>
                       </div>
                     </div>
 
-                    {/* BACK — AFTER image */}
+                    {/* BACK — AFTER */}
                     <div className="cl-face cl-face--back">
                       <div className="cl-paper-main">
                         <Image
@@ -409,7 +491,8 @@ export default function CreativeLab() {
                           </h3>
                         </div>
 
-                        <div className="cl-label-badge" style={{ bottom: "auto", top: 16 }}>After</div>
+                        {/* AFTER badge — purple tinted high opacity */}
+                        <div className="cl-label-badge--after">After</div>
                       </div>
                     </div>
 

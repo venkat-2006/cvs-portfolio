@@ -103,7 +103,7 @@ export default function AboutPhilosophy() {
             className="text-[10px] uppercase text-white/22"
             style={{ letterSpacing: "0.38em", fontFamily: "'DM Sans', sans-serif" }}
           >
-            CVS GFX — Est. 2022
+            CVS GFX — Est. 2023
           </p>
         </div>
 
