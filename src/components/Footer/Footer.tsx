@@ -202,9 +202,9 @@ const cssFooter = `
     border-color: rgba(59, 130, 246, 0.7);
     box-shadow: 0 20px 45px rgba(59, 130, 246, 0.2);
   }
-  .ft-link-card--dribbble:hover {
-    border-color: rgba(236, 72, 153, 0.7);
-    box-shadow: 0 20px 45px rgba(236, 72, 153, 0.2);
+  .ft-link-card--discord:hover {
+    border-color: rgba(88, 101, 242, 0.7);
+    box-shadow: 0 20px 45px rgba(88, 101, 242, 0.2);
   }
   .ft-link-card--email:hover {
     border-color: rgba(167, 139, 250, 0.7);
@@ -224,7 +224,7 @@ const cssFooter = `
   }
   .ft-link-card--instagram .ft-link-card__brand-icon { color: rgba(244, 63, 94, 0.65); }
   .ft-link-card--behance .ft-link-card__brand-icon { color: rgba(59, 130, 246, 0.65); }
-  .ft-link-card--dribbble .ft-link-card__brand-icon { color: rgba(236, 72, 153, 0.65); }
+  .ft-link-card--discord .ft-link-card__brand-icon { color: rgba(88, 101, 242, 0.65); }
   .ft-link-card--email .ft-link-card__brand-icon { color: rgba(167, 139, 250, 0.65); }
 
   .ft-link-card:hover .ft-link-card__brand-icon {
@@ -232,7 +232,7 @@ const cssFooter = `
   }
   .ft-link-card--instagram:hover .ft-link-card__brand-icon { color: #f43f5e; }
   .ft-link-card--behance:hover .ft-link-card__brand-icon { color: #3b82f6; }
-  .ft-link-card--dribbble:hover .ft-link-card__brand-icon { color: #ec4899; }
+  .ft-link-card--discord:hover .ft-link-card__brand-icon { color: #5865F2; }
   .ft-link-card--email:hover .ft-link-card__brand-icon { color: #c084fc; }
 
   .ft-link-card__label {
@@ -265,7 +265,7 @@ const cssFooter = `
   }
   .ft-link-card--instagram:hover .ft-link-card__icon { border-color: rgba(244, 63, 94, 0.6); }
   .ft-link-card--behance:hover .ft-link-card__icon { border-color: rgba(59, 130, 246, 0.6); }
-  .ft-link-card--dribbble:hover .ft-link-card__icon { border-color: rgba(236, 72, 153, 0.6); }
+  .ft-link-card--discord:hover .ft-link-card__icon { border-color: rgba(88, 101, 242, 0.6); }
   .ft-link-card--email:hover .ft-link-card__icon { border-color: rgba(167, 139, 250, 0.6); }
 
   .ft-link-card__svg {
@@ -308,6 +308,7 @@ const cssFooter = `
     color: rgba(255, 255, 255, 0.45);
   }
 `;
+
 export default function Footer() {
   return (
     <>
@@ -373,7 +374,6 @@ export default function Footer() {
             <a href="https://www.behance.net/cvsgfx" target="_blank" rel="noreferrer" className="ft-link-card ft-link-card--behance">
               <div className="ft-link-card__left">
                 <div className="ft-link-card__brand-icon">
-                  {/* Official Behance blue logo */}
                   <svg width="20" height="20" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
                     <path fill="#1769ff" d="M 9 4 C 6.24 4 4 6.24 4 9 L 4 41 C 4 43.76 6.24 46 9 46 L 41 46 C 43.76 46 46 43.76 46 41 L 46 9 C 46 6.24 43.76 4 41 4 L 9 4 z M 14 16 L 21.544922 16 C 21.944922 16 25.908203 16.007234 25.908203 20.115234 C 25.908203 22.322234 24.2875 23.132953 23.6875 23.376953 C 24.5875 23.624953 27 24.536 27 27.875 C 27 32 23.370625 32 22.640625 32 L 14 32 L 14 16 z M 30 18 L 38 18 L 38 20 L 30 20 L 30 18 z M 17.5 18.5 L 17.5 22.5 L 21 22.5 C 21 22.5 22.410156 22.405 22.410156 20.5 C 22.410156 18.5 21 18.5 21 18.5 L 17.5 18.5 z M 34.087891 21.978516 C 37.640891 21.978516 39.011719 24.6615 39.011719 27.0625 C 39.011719 27.3765 38.981234 28 38.865234 28 L 30.677734 28 C 30.677734 30.153 32.199609 30.609375 33.224609 30.609375 C 34.196609 30.609375 34.800781 30.199219 35.175781 29.449219 L 38.628906 29.449219 C 37.551906 32.449219 35.367188 32.978516 33.117188 32.978516 C 29.790188 32.978516 27.337891 31.021484 27.337891 27.021484 C 27.337891 23.028484 29.761891 21.978516 34.087891 21.978516 z M 17.5 25 L 17.5 29.5 L 21.5 29.5 C 21.5 29.5 23.5 29.5 23.5 27.25 C 23.5 25 21.5 25 21.5 25 L 17.5 25 z M 33.962891 24.291016 C 32.612891 24.291016 30.820313 24.882 30.695313 26.875 L 36.757813 26.875 C 36.757813 25.625 35.862891 24.291016 33.962891 24.291016 z"/>
                   </svg>
@@ -387,11 +387,10 @@ export default function Footer() {
               </div>
             </a>
 
-            {/* DISCORD LINK CARD */}
-            <a href="https://discord.com/users/chaitanya_28" target="_blank" rel="noreferrer" className="ft-link-card ft-link-card--discord">
+            {/* DISCORD LINK CARD (FIXED WITH YOUR NUMERIC USER ID) */}
+            <a href="https://discordapp.com/users/1071042905776599150" target="_blank" rel="noreferrer" className="ft-link-card ft-link-card--discord">
               <div className="ft-link-card__left">
                 <div className="ft-link-card__brand-icon">
-                  {/* Official Discord blue logo */}
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="#5865F2" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.04.036.052a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
                   </svg>
@@ -405,15 +404,14 @@ export default function Footer() {
               </div>
             </a>
 
-            {/* EMAIL CONTACT LINK CARD */}
-            <a href="mailto:cvsworks69@gmail.com" className="ft-link-card ft-link-card--email">
+            {/* EMAIL CONTACT LINK CARD (FIXED CROSS-PLATFORM FALLBACK) */}
+            <a href="mailto:cvsworks69@gmail.com" target="_blank" rel="noreferrer" className="ft-link-card ft-link-card--email">
               <div className="ft-link-card__left">
                 <div className="ft-link-card__brand-icon">
-                  {/* Official Gmail multicolor logo */}
                   <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" fill="#EA4335"/>
                     <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64V9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" fill="#EA4335"/>
-                    <path d="M0 5.457v13.909c0 .904.732 1.636 1.636 1.636h3.819V11.73L12 16.64V9.548L5.455 4.64 3.927 3.493C2.309 2.28 0 3.434 0 5.457z" fill="#34A853"/>
+                    <path d="M0 5.457v13.909c0 .904.732 1.636-1.636 1.636h-3.819V11.73L12 16.64V9.548L5.455 4.64 3.927 3.493C2.309 2.28 0 3.434 0 5.457z" fill="#34A853"/>
                     <path d="M5.455 11.73v7.273H1.636A1.636 1.636 0 0 1 0 17.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64v7.09z" fill="#4285F4"/>
                     <path d="M18.545 11.73v7.273h3.819c.904 0 1.636-.732 1.636-1.636V5.457c0-2.023-2.309-3.178-3.927-1.964L18.545 4.64v7.09z" fill="#FBBC05"/>
                     <path d="M12 9.548l6.545-4.91v7.092L12 16.64 5.455 11.73V4.64L12 9.548z" fill="#EA4335"/>
