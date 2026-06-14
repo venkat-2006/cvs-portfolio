@@ -10,13 +10,13 @@ import Footer from "@/components/Footer/Footer";
 
 type Props = {
   params: Promise<{
-    category: string;
+    slug: string; // ← must match the folder name [slug]
   }>;
 };
 
 export default function CategoryPage({ params }: Props) {
   const resolvedParams = use(params);
-  const categorySlug = resolvedParams.category;
+  const categorySlug = resolvedParams.slug; // ← updated from .category
 
   const category = categories.find((c) => c.slug === categorySlug);
 
@@ -27,7 +27,6 @@ export default function CategoryPage({ params }: Props) {
   const currentCategoryWorks = works.filter((w) => w.category === categorySlug);
   const isPortraitCategory = categorySlug === "insta-covers";
 
-  // Split title into first word and rest for mixed font treatment
   const titleWords = category.title.split(" ");
   const firstWord = titleWords[0];
   const restWords = titleWords.slice(1).join(" ");
@@ -85,44 +84,31 @@ export default function CategoryPage({ params }: Props) {
             </p>
           </div>
 
-          {/* ── CREATIVE TITLE BLOCK ── */}
+          {/* Title Block */}
           <div className="relative mb-10 overflow-visible">
-
-            {/* Watermark ghost — huge, behind everything */}
             <span
               aria-hidden="true"
               className="absolute -top-6 -left-3 select-none pointer-events-none uppercase text-white/[0.025] leading-none tracking-tighter"
-              style={{
-                fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: "clamp(100px, 18vw, 260px)",
-              }}
+              style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: "clamp(100px, 18vw, 260px)" }}
             >
               {firstWord}
             </span>
 
-            {/* Line 1 — italic serif "the" style intro word in purple */}
             {restWords && (
               <p
                 className="relative text-purple-400/70 mb-1 leading-none"
-                style={{
-                  fontFamily: "'Playfair Display', Georgia, serif",
-                  fontStyle: "italic",
-                  fontSize: "clamp(18px, 2.2vw, 32px)",
-                  letterSpacing: "0.01em",
-                }}
+                style={{ fontFamily: "'Playfair Display', Georgia, serif", fontStyle: "italic", fontSize: "clamp(18px, 2.2vw, 32px)", letterSpacing: "0.01em" }}
               >
                 — the art of
               </p>
             )}
 
-            {/* Line 2 — BIG condensed display word (first word) */}
             <h1
               className="relative leading-[0.85] uppercase tracking-tighter"
               style={{
                 fontFamily: "'Bebas Neue', sans-serif",
                 fontSize: "clamp(64px, 10vw, 148px)",
-                background:
-                  "linear-gradient(160deg, #ffffff 0%, rgba(255,255,255,0.75) 50%, rgba(168,85,247,0.9) 100%)",
+                background: "linear-gradient(160deg, #ffffff 0%, rgba(255,255,255,0.75) 50%, rgba(168,85,247,0.9) 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -131,35 +117,19 @@ export default function CategoryPage({ params }: Props) {
               {firstWord}
             </h1>
 
-            {/* Line 3 — rest of title in elegant thin serif italic (if multi-word) */}
             {restWords && (
               <h1
                 className="relative leading-tight mt-1"
-                style={{
-                  fontFamily: "'Playfair Display', Georgia, serif",
-                  fontStyle: "italic",
-                  fontWeight: 400,
-                  fontSize: "clamp(28px, 4vw, 64px)",
-                  color: "rgba(255,255,255,0.55)",
-                  letterSpacing: "-0.01em",
-                }}
+                style={{ fontFamily: "'Playfair Display', Georgia, serif", fontStyle: "italic", fontWeight: 400, fontSize: "clamp(28px, 4vw, 64px)", color: "rgba(255,255,255,0.55)", letterSpacing: "-0.01em" }}
               >
                 {restWords}
               </h1>
             )}
 
-            {/* Single-word titles get a thin italic tagline beneath */}
             {!restWords && (
               <p
                 className="relative mt-2 leading-none"
-                style={{
-                  fontFamily: "'Playfair Display', Georgia, serif",
-                  fontStyle: "italic",
-                  fontWeight: 300,
-                  fontSize: "clamp(16px, 2vw, 28px)",
-                  color: "rgba(168,85,247,0.6)",
-                  letterSpacing: "0.02em",
-                }}
+                style={{ fontFamily: "'Playfair Display', Georgia, serif", fontStyle: "italic", fontWeight: 300, fontSize: "clamp(16px, 2vw, 28px)", color: "rgba(168,85,247,0.6)", letterSpacing: "0.02em" }}
               >
                 — a curated collection
               </p>
@@ -174,19 +144,13 @@ export default function CategoryPage({ params }: Props) {
           </div>
 
           {/* Description */}
-          <p
-            className="max-w-xl text-zinc-400 text-sm leading-relaxed"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-          >
+          <p className="max-w-xl text-zinc-400 text-sm leading-relaxed" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
             {category.description}
           </p>
 
           {/* Stats pill */}
           <div className="flex items-center gap-5 mt-8">
-            <div
-              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/[0.06] bg-white/[0.02] backdrop-blur-md"
-              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-            >
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/[0.06] bg-white/[0.02] backdrop-blur-md" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
               <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-400">
                 {currentCategoryWorks.length} Works
@@ -197,7 +161,6 @@ export default function CategoryPage({ params }: Props) {
             </span>
           </div>
 
-          {/* Bottom border */}
           <div className="mt-12 h-px w-full bg-gradient-to-r from-purple-500/20 via-white/[0.04] to-transparent" />
         </header>
 
@@ -215,9 +178,7 @@ export default function CategoryPage({ params }: Props) {
                 <div
                   key={work.id}
                   className={`group relative w-full bg-[#07070a] border border-white/[0.05] rounded-lg overflow-hidden shadow-md transition-all duration-500 hover:-translate-y-2 hover:border-purple-500/60 hover:shadow-[0_12px_24px_rgba(0,0,0,0.8),0_0_20px_rgba(139,92,246,0.28)] will-change-transform ${
-                    isPortraitCategory
-                      ? "aspect-[9/16] max-w-[240px]"
-                      : "aspect-[16/9] max-w-[340px]"
+                    isPortraitCategory ? "aspect-[9/16] max-w-[240px]" : "aspect-[16/9] max-w-[340px]"
                   }`}
                   title={work.title}
                 >
