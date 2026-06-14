@@ -405,26 +405,39 @@ export default function Footer() {
             </a>
 
             {/* EMAIL CONTACT LINK CARD (FIXED CROSS-PLATFORM FALLBACK) */}
-            <a href="mailto:cvsworks69@gmail.com" target="_blank" rel="noreferrer" className="ft-link-card ft-link-card--email">
-              <div className="ft-link-card__left">
-                <div className="ft-link-card__brand-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" fill="#EA4335"/>
-                    <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64V9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" fill="#EA4335"/>
-                    <path d="M0 5.457v13.909c0 .904.732 1.636-1.636 1.636h-3.819V11.73L12 16.64V9.548L5.455 4.64 3.927 3.493C2.309 2.28 0 3.434 0 5.457z" fill="#34A853"/>
-                    <path d="M5.455 11.73v7.273H1.636A1.636 1.636 0 0 1 0 17.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64v7.09z" fill="#4285F4"/>
-                    <path d="M18.545 11.73v7.273h3.819c.904 0 1.636-.732 1.636-1.636V5.457c0-2.023-2.309-3.178-3.927-1.964L18.545 4.64v7.09z" fill="#FBBC05"/>
-                    <path d="M12 9.548l6.545-4.91v7.092L12 16.64 5.455 11.73V4.64L12 9.548z" fill="#EA4335"/>
-                  </svg>
-                </div>
-                <span className="ft-link-card__label">Email Contact</span>
-              </div>
-              <div className="ft-link-card__icon">
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="ft-link-card__svg">
-                  <path d="M1 9L9 1M9 1H3M9 1V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-            </a>
+            <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=cvsworks69@gmail.com&su=Project%20Inquiry"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="ft-link-card ft-link-card--email"
+  aria-label="Send Email"
+>
+  <div className="ft-link-card__left">
+    <div className="ft-link-card__brand-icon">
+      {/* Your Gmail SVG */}
+    </div>
+    <span className="ft-link-card__label">Email Contact</span>
+  </div>
+
+  <div className="ft-link-card__icon">
+    <svg
+      width="10"
+      height="10"
+      viewBox="0 0 10 10"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="ft-link-card__svg"
+    >
+      <path
+        d="M1 9L9 1M9 1H3M9 1V7"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </div>
+</a>
 
           </div>
 
